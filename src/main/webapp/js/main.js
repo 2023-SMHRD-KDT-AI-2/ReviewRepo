@@ -204,8 +204,38 @@ jQuery(document).ready(function($) {
 		  $(".banner").stop().animate({"top":position+currentPosition+"px"},800);
 		});
 	  });
-	  $(function(){
+	  //페이지로드시 function 실행
+	$(document).ready(function() {
+		getCookieSecretCouponPopup();
+	}); 
+
+	//쿠키값이 있는지 확인하여 팝업창 show, hide 처리.
+	function getCookieSecretCouponPopup () {
+		var cookiedata = document.cookie;
+		if ( cookiedata.indexOf("popup_secret_coupon=done") < 0 ){
+			$('.popBg').show();
+		}
+		else {
+			$('.popBg').hide();
+		}
+	}
+
+	//쿠키데이터 설정 function 
+	function setCookie( name, value, expiredays ) {
+		var todayDate = new Date();
+		todayDate.setDate( todayDate.getDate() + expiredays );
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+	}
+
+	$(function(){
 		$('.close-btn').click(function(){
+			$('.popBg').hide();
+		})
+	});
+
+	$(function(){
+		$('.ck').click(function(){
+			setCookie('popup_secret_coupon','done',1);
 			$('.popBg').hide();
 		})
 	});
