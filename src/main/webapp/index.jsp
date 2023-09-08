@@ -75,7 +75,7 @@
 
             <div class="col-6 col-md-4 order-2 order-md-1 text-center">
               <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">In Foot <br> Out Foot</a>
+                <a href="index.jsp" class="js-logo-clone">In Foot <br> Out Foot</a>
               </div>
             </div>
 
@@ -92,7 +92,7 @@
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
                   <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
                   <li>
-                    <a href="cart.html" class="site-cart">
+                    <a href="cart.jsp" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">2</span>
                     </a>
@@ -109,7 +109,7 @@
         <div class="container">
           <ul class="site-menu js-clone-nav d-none d-md-block">
             <li class="has-children active">
-              <a href="index.html">워킹화</a>
+              <a href="index.jsp">워킹화</a>
               <ul class="dropdown">
                 <li><a href="#">Menu One</a></li>
                 <li><a href="#">Menu Two</a></li>
@@ -125,7 +125,7 @@
               </ul>
             </li>
             <li class="has-children">
-              <a href="about.html">런닝화</a>
+              <a href="about.jsp">런닝화</a>
               <ul class="dropdown">
                 <li><a href="#">Menu One</a></li>
                 <li><a href="#">Menu Two</a></li>
@@ -133,7 +133,7 @@
               </ul>
             </li>
             <li class="has-children">
-              <a href="shop.html">트레킹화</a>
+              <a href="shop.jsp">트레킹화</a>
               <ul class="dropdown">
                 <li><a href="#">Menu One</a></li>
                 <li><a href="#">Menu Two</a></li>

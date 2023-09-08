@@ -204,4 +204,28 @@ jQuery(document).ready(function($) {
 		  $(".banner").stop().animate({"top":position+currentPosition+"px"},800);
 		});
 	  });
+	  $(function(){
+		$('.close-btn').click(function(){
+			$('.popBg').hide();
+		})
+	});
+
+	$(function(){
+		$('.fa-x').click(function(){
+			$('.loginBg').hide();
+			$('.regist').hide();
+		})
+	});
+
+	$(function(){
+		$('.icon-person').click(function(){
+			$('.loginBg').show();
+		})
+	});
+
+	$(function(){
+		$('.join').click(function(){
+			$('.regist').show();
+		})
+	})
 });
