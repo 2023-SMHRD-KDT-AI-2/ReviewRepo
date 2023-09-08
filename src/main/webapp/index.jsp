@@ -33,6 +33,7 @@
           <button type="button" class="close-btn">X 닫기</button>
         </div>
     </div>
+    
 
   <!-- login(로그인) -->
       <zdiv class="loginBg">
