@@ -3,14 +3,16 @@
 <mapper namespace="com.smhrd.model.User">
 
 	<insert id="Join" parameterType="com.smhrd.model.User" >
-		insert into test values(
-			#{user_email},
-			#{user_name},
+		insert into userinfo values(
 			#{user_id},
 			#{user_pw},
-			132,
-			123,
-			123
+			#{user_name},
+			#{user_gender},
+			#{age},
+			#{address},
+			#{phone},
+			#{email},
+			sysdate
 		)
 		
 	</insert>
