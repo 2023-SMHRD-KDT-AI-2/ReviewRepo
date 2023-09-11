@@ -77,10 +77,10 @@
         </div>
       </div>
       
-      <!-- userInfo(사용자 정보를 얻기 위한 설문지) -->
-    <div class="userInfo">
-      <div class="userInfo1">
-        <form class="userInfo2">
+      <!-- footInfo(사용자 정보를 얻기 위한 설문지) -->
+    <div class="footInfo">
+      <div class="footInfo1">
+        <form class="footInfo2">
           <h3>설문지</h3>
           <table class="survey">
             <tr>

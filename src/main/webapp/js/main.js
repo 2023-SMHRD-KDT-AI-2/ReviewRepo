@@ -262,7 +262,7 @@ jQuery(document).ready(function($) {
 	// 회원가입 폼에서 다음 버튼을 누르면 설문지로 이동
 	$(function(){
 		$('.next').click(function(){
-			$('.userInfo').show()
+			$('.footInfo').show()
 		})
 	});
 	

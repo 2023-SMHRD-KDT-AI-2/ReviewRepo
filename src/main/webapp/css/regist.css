@@ -28,7 +28,7 @@
     margin: 5px;
   }
 
-  .userInfo {
+  .footInfo {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,7 +39,7 @@
     display: none;
   }
   
-  .userInfo1{
+  .footInfo1{
     width: 400px;
     height: 450px;
     background: #fff;
@@ -50,7 +50,7 @@
     text-align: center;
   }
   
-  .userInfo2{
+  .footInfo2{
     margin-top: 30px;
   }
 
