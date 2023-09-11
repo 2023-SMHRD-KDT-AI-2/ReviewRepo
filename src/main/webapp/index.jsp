@@ -58,13 +58,113 @@
   <!-- regist(회원가입) -->
       <div class="regist">
         <div class="regist1">
-          <form>
+          <form class="regist2">
             <h3>회원가입</h3>
-            <input type="text" class="id"> <button>중복확인</button>
+            <input type="text" class="regist_2 id" placeholder="아이디를 입력해주세요"> <button>중복확인</button><br>
+            <input type="password" class="regist_2 pw" placeholder="비밀번호를 입력해주세요" style="width: 270px;"><br>
+            <input type="password" class="regist_2 pw2" placeholder="비밀번호 재확인" style="width: 270px;"><br>
+            성별 <input type="radio" class="regist_2" name="gender" value="men"> 남자
+            <input type="radio" class="regist_2" name="gender" value="women"> 여자 <br>
+            <input type="text" class="regist_2 number" style="width: 70px;"> - 
+            <input type="text" class="regist_2 number" style="width: 70px;"> - 
+            <input type="text" class="regist_2 number" style="width: 70px;"><br>
+            <input type="text" id="zip-code" placeholder="우편번호" style="width: 145px;">
+            <input type="button" class="zipSearch" onclick="execDaumPostcode()" value="우편번호 찾기">
+            <input type="text" id="address-1" class="regist_2 txt_addr" placeholder="도로명주소" style="width: 270px;">
+            <input type="text" id="address-2" class="regist_2 zipCode" placeholder="상세주소" style="width: 270px;"><br>
+            <button><a hrdf="#" class="regist_2 next">다음</a></button>
           </form>
-          <a href="#" class="fa-regular fa-x"></a>
         </div>
       </div>
+      
+      <!-- userInfo(사용자 정보를 얻기 위한 설문지) -->
+    <div class="userInfo">
+      <div class="userInfo1">
+        <form class="userInfo2">
+          <h3>설문지</h3>
+          <table class="survey">
+            <tr>
+              <td align="left"><span >발 사이즈</span></td>
+              <td><input type="text" class="foot footSize"></td>
+            </tr>
+            <tr>
+              <td align="left"><span >신어본 신발</span></td>
+              <td><input type="text" class="foot shoes"></td>
+            </tr>
+            <tr>
+              <td align="left"><label for="ice-cream-choice">긍정적인 신발</label></td>
+              <td>
+                <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+  
+                <datalist id="ice-cream-flavors">
+                  <option value="NIKE"></option>
+                  <option value="ADIDAS"></option>
+                  <option value="VANS"></option>
+                  <option value="CONVERSE"></option>
+                  <option value="FILA"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td align="left"><label for="ice-cream-choice">부정적인 신발</label></td>
+              <td>
+                <input list="ice-cream-flavors1" id="ice-cream-choice1" name="ice-cream-choice1" />
+  
+                <datalist id="ice-cream-flavors1">
+                  <option value="NIKE"></option>
+                  <option value="ADIDAS"></option>
+                  <option value="VANS"></option>
+                  <option value="CONVERSE"></option>
+                  <option value="FILA"></option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <td align="left"><label for="ice-cream-choice">선호 하는 신발 종류</label></td>
+              <td>
+                <input list="ice-cream-flavors2" id="ice-cream-choice2" class="foot" name="ice-cream-choice2" />
+  
+                <datalist id="ice-cream-flavors2">
+                  <option value="로우탑"></option>
+                  <option value="미들탑"></option>
+                  <option value="하이탑"></option>
+                  <option value="구두"></option>
+                  <option value="스니커즈"></option>
+                  <option value="캔버스화"></option>
+                  <option value="운동화"></option>
+                  <option value="워커"></option>
+                  <option value="크록스"></option>
+                  <option value="샌들"></option>
+                  <option value="슬리퍼"></option>
+                </datalist>
+              </td>
+            </tr>
+          </table>
+          
+          <button><a href="#" class="membership_btn membership1">다음</a></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Positive -->
+    <div class="ball_of_foot">
+      <div class="ball_of_foot_1">
+        <form>
+          <h4>긍정적</h4>
+          <tr>
+            <td colspan="3"><p>발 볼은 어땠나요?</p></td>
+          </tr>
+          <tr>
+            <td>컸다<input type="radio" name="ball" value="컸다"></td>
+            <td>적절했다<input type="radio" name="ball" value="적절했다"></td>
+            <td>좁았다<input type="radio" name="ball" value="좁았다"></td>
+          </tr>
+          
+          
+          
+        </form>
+      </div>
+    </div>
 
   <!-- header -->
   <div class="site-wrap">

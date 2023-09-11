@@ -257,5 +257,31 @@ jQuery(document).ready(function($) {
 		$('.join').click(function(){
 			$('.regist').show();
 		})
-	})
+	});
+	
+	// 회원가입 폼에서 다음 버튼을 누르면 설문지로 이동
+	$(function(){
+		$('.next').click(function(){
+			$('.userInfo').show()
+		})
+	});
+	
+	// 우편번호 받아오는 JS 코드
+	$(function(){
+		$('.zipSearch').click(function execDaumPostcode() {
+				new daum.Postcode( {
+				  oncomplete: function( data ) {
+					document.getElementById( 'zip-code' ).value = data.zonecode;
+					document.getElementById( 'address-1' ).value = data.address;
+				  }
+				} ).open();
+			})
+	});
+
+	// 설문지 창에서 다음을 누르면 긍/부정 신발 설문조사로 이동
+	$(function(){
+		$('.membership1').click(function(){
+			$('.ball_of_foot').show()
+		})
+	});
 });
