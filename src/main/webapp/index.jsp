@@ -398,7 +398,7 @@
           </div>
           <!-- banner -->
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
-            <a target="_blank" href="#">
+            <a target="_blank" href="popup_banner.jsp">
               <img src="./images/working.png" width= "200" height="300" border="1">
             </a>
           </div>
