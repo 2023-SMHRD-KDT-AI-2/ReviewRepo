@@ -36,7 +36,7 @@
     
 
   <!-- login(로그인) -->
-      <zdiv class="loginBg">
+      <div class="loginBg">
           <div class="login-form">
               <form>
                   <h3>로그인</h3>
@@ -48,12 +48,62 @@
               <div class="links">
                   <a href="#" class="join">회원가입</a>&nbsp;&nbsp;
                   <a href="#">비밀번호를 잊어버리셨나요?</a>
-              </div>
-              <img src="./images/btnW_완성형.png" value="naverLogin" class="loginApi">
-              <img src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
+               <!-- 카카오 로그아웃 버튼 -->
+    			
+              <img id="kakao-login-button" src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
+              <button id="kakao-logout-button" style="display: none;">카카오 로그아웃</button>
+             
               <a href="#" class="fa-regular fa-x"></a>
-          </div>
-      </zdiv>
+          	</div>
+      	</div>
+      </div>
+   <script type="text/javascript">
+        // 카카오 SDK 초기화
+        Kakao.init('1860b45a3b2095c23c88e54daa78ccb8');
+
+        // 로그인 버튼 클릭 시 실행할 함수
+        document.getElementById('kakao-login-button').addEventListener('click', function () {
+            Kakao.Auth.loginForm({
+                success: function (response) {
+                    // 카카오 로그인 성공 시 사용자 정보 가져오기
+                    Kakao.API.request({
+                        url: '/v2/user/me',
+                        success: function (response) {
+                            var userName = response.properties.nickname;
+
+                            // 사용자 정보 출력
+                            document.getElementById('kakao-user-name').innerHTML = userName+'님 환영합니다.' ;
+
+                            document.getElementById('kakao-login-button').style.display = 'none';
+                            document.getElementById('kakao-logout-button').style.display = 'block';
+                            // 사용자 정보 콘솔에 출력
+                            console.log('사용자 정보:', response);
+
+                            // 성공 시 콘솔에 메시지 출력
+                            console.log('카카오 로그인 성공');
+                            
+                        },
+                        fail: function (error) {
+                            console.log(error);
+                        }
+                    });
+                },
+                fail: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        // 카카오 로그아웃 버튼 클릭 시 실행할 함수
+        document.getElementById('kakao-logout-button').addEventListener('click', function () {
+            // 카카오 로그아웃 처리
+            Kakao.Auth.logout(function () {
+                document.getElementById('kakao-user-name').innerHTML = '';
+                document.getElementById('kakao-login-button').style.display = 'block';
+                document.getElementById('kakao-logout-button').style.display = 'none';
+            });
+        });
+    </script>
 
   <!-- regist(회원가입) -->
       <div class="regist">
@@ -189,6 +239,8 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
+                   <!-- 사용자 이름 출력 -->
+    			  <li><div id = "kakao-user-name"></div></li>
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
                   <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
                   <li>
