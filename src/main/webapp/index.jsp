@@ -244,7 +244,7 @@
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
                   <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
                   <li>
-                    <a href="cart.jsp" class="site-cart">
+                    <a href="Cart" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">2</span>
                     </a>
