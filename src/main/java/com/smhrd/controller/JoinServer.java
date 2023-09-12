@@ -2,6 +2,7 @@ package com.smhrd.controller;
 
 import java.io.IOException;
 
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,7 +29,7 @@ public class JoinServer extends HttpServlet {
 //		String user_shoes = request.getParameter("user_shoes");
 //		String user_gender = request.getParameter("gender");
 		
-		
+		System.out.println("username : " + user_name);
 		
 		UserDAO dao = new UserDAO();
 		User user = new User();
