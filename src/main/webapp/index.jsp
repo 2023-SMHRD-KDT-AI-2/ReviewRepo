@@ -58,24 +58,21 @@
   <!-- regist(회원가입) -->
       <div class="regist">
         <div class="regist1">
-          <form class="regist2" action="JoinServer">
+          <form class="regist2">
             <h3>회원가입</h3>
-            <input type="text" class="regist_2 id" name ="user_id" placeholder="아이디를 입력해주세요"> <button>중복확인</button><br>
-            <input type="password" class="regist_2 pw" name ="user_pw" placeholder="비밀번호를 입력해주세요" style="width: 270px;"><br>
-            <input type="password" class="regist_2 pw2" name ="user_pw2" placeholder="비밀번호 재확인" style="width: 270px;"><br>
-            이름 <input type="name" class="regist_2" name="user_name" placeholder="이름을 입려해주세요!"> <br>
-            성별 <input type="radio" id="gender" class="regist_2" name="gender" value="남자"> 남자
-            <input type="radio" id="gender" class="regist_2" name="gender" value="여자"> 여자 <br>
-            나이<input type="text" class="regist_2" name="age" style="width: 70px">  <br>
-            <input type="text" id="zip-code" placeholder="우편번호" name="zipNum" style="width: 145px;">
+            <input type="text" class="regist_2 id" placeholder="아이디를 입력해주세요"> <button>중복확인</button><br>
+            <input type="password" class="regist_2 pw" placeholder="비밀번호를 입력해주세요" style="width: 270px;"><br>
+            <input type="password" class="regist_2 pw2" placeholder="비밀번호 재확인" style="width: 270px;"><br>
+            성별 <input type="radio" class="regist_2" name="gender" value="men"> 남자
+            <input type="radio" class="regist_2" name="gender" value="women"> 여자 <br>
+            <input type="text" class="regist_2 number" style="width: 70px;"> - 
+            <input type="text" class="regist_2 number" style="width: 70px;"> - 
+            <input type="text" class="regist_2 number" style="width: 70px;"><br>
+            <input type="text" id="zip-code" placeholder="우편번호" style="width: 145px;">
             <input type="button" class="zipSearch" onclick="execDaumPostcode()" value="우편번호 찾기">
-            <input type="text" id="address-1" name="address1" class="regist_2 txt_addr" placeholder="도로명주소" style="width: 270px;">
-            <input type="text" id="address-2" name="address2" class="regist_2 zipCode" placeholder="상세주소" style="width: 270px;"><br>
-            <input type="text" class="regist_2 number" name="phone1" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" name="phone2" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" name="phone3" style="width: 70px;"><br>
-            email<input type="text" class="regist_2" name="email" style="width: 225px"><br>
-            <button><input type="submit" class="regist_2 next" value="다음"></button>
+            <input type="text" id="address-1" class="regist_2 txt_addr" placeholder="도로명주소" style="width: 270px;">
+            <input type="text" id="address-2" class="regist_2 zipCode" placeholder="상세주소" style="width: 270px;"><br>
+            <button><a hrdf="#" class="regist_2 next">다음</a></button>
           </form>
         </div>
       </div>

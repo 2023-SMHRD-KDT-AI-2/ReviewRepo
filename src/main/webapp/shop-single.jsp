@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import = "java.util.ArrayList" %>
+<%@page import="com.smhrd.model.*"%>
+<%@page import="java.util.List"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -112,9 +116,25 @@
           <div class="col-md-6">
             <img src="images/cloth_1.jpg" alt="Image" class="img-fluid">
           </div>
+          
+   
+          
+          <% 
+          
+          ProductDAO dao = new ProductDAO();
+          String pro_id = "N_01";
+          Product product = dao.product(pro_id);
+          
+          
+          
+          %>
+
           <div class="col-md-6">
-            <h2 class="text-black">Tank Top T-Shirt</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
+          	<!--  상품명 -->
+            <h2 class="text-black" name = "pro_id" id = "pro_id">${product.pro_name}</h2>
+            <!-- 상품설명 -->
+            
+            <p>${product.pro_info}</p>
             <p class="mb-4">Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
             <p><strong class="text-primary h4">$50.00</strong></p>
             <div class="mb-1 d-flex">

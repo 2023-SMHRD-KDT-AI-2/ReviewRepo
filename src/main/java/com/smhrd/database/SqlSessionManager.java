@@ -2,6 +2,7 @@ package com.smhrd.database;
 
 import java.io.InputStream;
 
+
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
@@ -12,10 +13,14 @@ public class SqlSessionManager {
 	
 	static {
 		try {
-			String resource = "com/smhrd/database/config.xml";
+			String resource = "config.xml";
 			
-			InputStream inputStream = Resources.getResourceAsStream(resource);
-			sqlSession = new SqlSessionFactoryBuilder().build(inputStream);
+			InputStream inputStream = 
+					Resources.getResourceAsStream(resource);
+			
+			sqlSession = 
+					new SqlSessionFactoryBuilder().build(inputStream);
+			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

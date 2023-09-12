@@ -11,15 +11,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class User {
 	
+	private String user_email;
+	private String user_name;
 	private String user_id;
 	private String user_pw;
-	private String user_name;
+	private String user_foot;
+	private String user_shose;
 	private String user_gender;
-	private String age;
-	private String address;
-	private String phone;
-	private String email;
-	private String join_date;
-	
 
 }
