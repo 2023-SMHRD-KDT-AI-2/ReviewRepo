@@ -88,59 +88,29 @@
           <table class="survey">
             <tr>
               <td align="left"><span >발 사이즈</span></td>
-              <td><input type="text" class="foot footSize"></td>
+              <td><input type="text" name="foot_size" class="foot footSize"></td>
             </tr>
             <tr>
-              <td align="left"><span >신어본 신발</span></td>
-              <td><input type="text" class="foot shoes"></td>
+            	<td align="left">발 볼 넓이</td>
+            	<td>
+            		유<input type="radio" name="foot_width" class="footWidth" value="유">
+            		무<input type="radio" name="foot_width" class="footWidth" value="무">
+            	</td>
             </tr>
             <tr>
-              <td align="left"><label for="ice-cream-choice">긍정적인 신발</label></td>
-              <td>
-                <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-  
-                <datalist id="ice-cream-flavors">
-                  <option value="NIKE"></option>
-                  <option value="ADIDAS"></option>
-                  <option value="VANS"></option>
-                  <option value="CONVERSE"></option>
-                  <option value="FILA"></option>
-                </datalist>
-              </td>
+            	<td align="left">발 등 길이</td>
+            	
+            	<td>
+            		유<input type="radio" name="foot_height" class="footHeight" value="유">
+            		무<input type="radio" name="foot_height" class="footHeight" value="무">
+            	</td>
             </tr>
             <tr>
-              <td align="left"><label for="ice-cream-choice">부정적인 신발</label></td>
-              <td>
-                <input list="ice-cream-flavors1" id="ice-cream-choice1" name="ice-cream-choice1" />
-  
-                <datalist id="ice-cream-flavors1">
-                  <option value="NIKE"></option>
-                  <option value="ADIDAS"></option>
-                  <option value="VANS"></option>
-                  <option value="CONVERSE"></option>
-                  <option value="FILA"></option>
-                </datalist>
-              </td>
-            </tr>
-            <tr>
-              <td align="left"><label for="ice-cream-choice">선호 하는 신발 종류</label></td>
-              <td>
-                <input list="ice-cream-flavors2" id="ice-cream-choice2" class="foot" name="ice-cream-choice2" />
-  
-                <datalist id="ice-cream-flavors2">
-                  <option value="로우탑"></option>
-                  <option value="미들탑"></option>
-                  <option value="하이탑"></option>
-                  <option value="구두"></option>
-                  <option value="스니커즈"></option>
-                  <option value="캔버스화"></option>
-                  <option value="운동화"></option>
-                  <option value="워커"></option>
-                  <option value="크록스"></option>
-                  <option value="샌들"></option>
-                  <option value="슬리퍼"></option>
-                </datalist>
-              </td>
+            	<td align="left">평발</td>
+            	<td>
+            		유<input type="radio" name="foot_flat" class="footFlat" value="유">
+            		무<input type="radio" name="foot_flat" class="footFlat" value="무">
+            	</td>
             </tr>
           </table>
           
@@ -183,9 +153,10 @@
             </div>
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
-              <form action="" class="site-block-top-search">
+              <form action="productSearch" class="site-block-top-search">
                 <span class="icon icon-search2"></span>
-                <input type="text" class="form-control border-0" placeholder="Search">
+                <!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
+                <input type="text" class="form-control border-0" name="search" placeholder="Search">
               </form>
             </div>
 
