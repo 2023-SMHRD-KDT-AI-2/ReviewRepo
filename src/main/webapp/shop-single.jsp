@@ -3,7 +3,7 @@
     <%@ page import="java.util.ArrayList" %>
       <%@page import="com.smhrd.model.*" %>
         <%@page import="java.util.List" %>
-        <%@ page import="com.smhrd.model.ProductDetail" %>
+        <%@ page import="com.smhrd.model.Product" %>
         
         
           <!DOCTYPE html>
@@ -107,13 +107,18 @@
                 </nav>
               </header>
               	
-				<% ArrayList<ProductDetail> productDetail =(ArrayList) request.getAttribute("productDetail");%>
+			<c:forEach var = "product" items = "${productList}">
+              
               <div class="bg-light py-3">
                 <div class="container">
                   <div class="row">
-                    <div class="col-md-12 mb-0"><a href="index.jsp">Home</a> <span class="mx-2 mb-0">/</span> <strong
-                        class="text-black">${productDetail.get(0).pro_category}<span class="mx-2 mb-0">/</span>
-                        ${productDetail.get(0).pro_name}</strong></div>
+                    <div class="col-md-12 mb-0"><a href="index.jsp">Home</a> <span class="mx-2 mb-0">/</span> 
+                    <strong class="text-black">
+                    
+                    ${product.pro_category}<span class="mx-2 mb-0">/</span>
+                        ${product.pro_name}
+                      
+                        </strong></div>
                   </div>
                 </div>
               </div>
@@ -122,23 +127,24 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-md-6">
-                      <img src="images/cloth_1.jpg" alt="Image" class="img-fluid">
+                      <img src="${product.img1_path}" alt="Image" class="img-fluid">
                     </div>
 
                     <div class="col-md-6">
                       <!--  상품명 -->
 
                       <h2 class="text-black">
-                        ${productDetail.get(0).pro_name}
+                        ${product.pro_name}
 
                       </h2>
                       <!-- 상품설명 -->
 
-                      <p>${productDetail.get(0).pro_info}</p>
+                      <p>${product.pro_info}</p>
 
 
                       <p class="mb-4"></p>
-                      <p><strong class="text-primary h4">${productDetail.get(0).pro_price}원</strong></p>
+                      <p><strong class="text-primary h4">${product.pro_price}원</strong></p>
+                       </c:forEach>
                         <!--  
               <label for="option-sm" class="d-flex mr-3 mb-3">
                 <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
@@ -234,7 +240,7 @@
                       <br>
                       <br>
                       <br>
-                      <p><a href="cart.jsp" class="buy-now btn btn-sm btn-primary">Add To Cart</a></p>
+                      <p><a href="cart.jsp" class="buy-now btn btn-sm btn-primary">장바구니 담기</a></p>
                       </div>
                       
 

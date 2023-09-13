@@ -23,6 +23,11 @@ public class Product {
 	private int pro_cost;
 	private String pro_time;
 	
+	private String img_id;
+	private String img1_path;
+//	private String img2_path;
+//	private String img3_path;
+	
 	
 }
 
