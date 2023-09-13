@@ -21,16 +21,17 @@ public class productSearch extends HttpServlet {
 			throws ServletException, IOException {
 
 		String parameter = request.getParameter("search");
-		String pro_name = request.getParameter("pro_name");
 		
 		
 		SearchDAO dao = new SearchDAO();
 		Search search = new Search();
 		
-		search.setPro_name(pro_name);
-
+		
 		ArrayList<Search> shoes = new ArrayList<Search>();// 넘어온 데이터값을
 
+		shoes = (ArrayList) dao.showSearch(parameter);
+		
+		
 		request.setAttribute("shoes", shoes);
 		
 		String url = "";

@@ -1,9 +1,11 @@
 <%@page import="javax.servlet.jsp.el.ScopedAttributeELResolver"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.smhrd.model.Search"%>
+<%@page import="com.smhrd.model.*"%>
 <%@page import="com.smhrd.model.SearchDAO"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,32 +164,39 @@
 
 
 
+						<%
+						ArrayList<Search> list = (ArrayList) request.getAttribute("shoes");
+						session.setAttribute("list", list);
+						System.out.println(list);
 
+						
+						
+						
+						%>
 
 						<div class="row mb-5">
 
-							<c:forEach var="item" items="${shoes}" varStatus="status">
-								<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-									<div class="block-4 text-center border">
+							<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+								<div class="block-4 text-center border">								
+									<c:forEach var="item" items="${list}" varStatus="status">
 										<figure class="block-4-image">
-											<a href="shop-single.jsp"><img
-												src="https://thumbnail6.coupangcdn.com/thumbnails/remote/230x230ex/image/vendor_inventory/c026/9afbfa27cf7cab33b6074c0ab2c00bddb0b86272d9e619dbe9114135d437.jpg"
+											<a href="shop-single.jsp"><img src="${item.img1_path}"
 												alt="Image placeholder" class="img-fluid"></a>
 										</figure>
 										<div class="block-4-text p-4">
 											<h3>
-												<a href="shop-single.jsp">${shoes.pro_name}</a>
+												<a href="shop-single.jsp">${item.pro_name}</a>
 											</h3>
-											<p class="mb-0">일반 신발</p>
-											<p class="text-primary font-weight-bold">119,000</p>
+											<p class="mb-0">${item.pro_category}</p>
+											<p class="text-primary font-weight-bold">${item.pro_price}</p>
 
 										</div>
-									</div>
+									</c:forEach>
 								</div>
-							</c:forEach>
-							
-							
-							
+							</div>
+
+
+
 							<!-- 
 							<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
 								<div class="block-4 text-center border">

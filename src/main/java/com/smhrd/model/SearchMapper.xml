@@ -5,9 +5,11 @@
 
 
 	<select id="selectPro" parameterType="string" resultType="com.smhrd.model.Search">
-		select * from product where pro_name=#{pro_name}
+		select * from product a 
+		inner join product_img b on a.pro_id = b.pro_id
+		where a.pro_name like '%'||#{parameter}||'%'
 		
-	
+
 	</select>
 
 

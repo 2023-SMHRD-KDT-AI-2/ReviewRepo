@@ -24,7 +24,8 @@
 
 	<!-- -->
 	<mappers>
-		<mapper resource="com/smhrd/model/User.xml" />
+		<mapper resource="com/smhrd/model/UserMapper.xml" />
+		<mapper resource="com/smhrd/model/SearchMapper.xml" />
 	</mappers>
 	
 </configuration>

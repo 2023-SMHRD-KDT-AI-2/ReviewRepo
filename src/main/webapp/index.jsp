@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/regist.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9dd5ee0fd1.js" crossorigin="anonymous"></script>
   </head>
   <body>
@@ -36,7 +38,7 @@
     
 
   <!-- login(로그인) -->
-      <zdiv class="loginBg">
+      <div class="loginBg">
           <div class="login-form">
               <form>
                   <h3>로그인</h3>
@@ -48,96 +50,173 @@
               <div class="links">
                   <a href="#" class="join">회원가입</a>&nbsp;&nbsp;
                   <a href="#">비밀번호를 잊어버리셨나요?</a>
-              </div>
-              <img src="./images/btnW_완성형.png" value="naverLogin" class="loginApi">
-              <img src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
+               <!-- 카카오 로그아웃 버튼 -->
+    			
+              <img id="kakao-login-button" src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
+              <button id="kakao-logout-button" style="display: none;">카카오 로그아웃</button>
+             
               <a href="#" class="fa-regular fa-x"></a>
-          </div>
-      </zdiv>
+          	</div>
+      	</div>
+      </div>
+   <script type="text/javascript">
+        // 카카오 SDK 초기화
+        Kakao.init('1860b45a3b2095c23c88e54daa78ccb8');
+
+        // 로그인 버튼 클릭 시 실행할 함수
+        document.getElementById('kakao-login-button').addEventListener('click', function () {
+            Kakao.Auth.loginForm({
+                success: function (response) {
+                    // 카카오 로그인 성공 시 사용자 정보 가져오기
+                    Kakao.API.request({
+                        url: '/v2/user/me',
+                        success: function (response) {
+                            var userName = response.properties.nickname;
+
+                            // 사용자 정보 출력
+                            document.getElementById('kakao-user-name').innerHTML = userName+'님 환영합니다.' ;
+
+                            document.getElementById('kakao-login-button').style.display = 'none';
+                            document.getElementById('kakao-logout-button').style.display = 'block';
+                            // 사용자 정보 콘솔에 출력
+                            console.log('사용자 정보:', response);
+
+                            // 성공 시 콘솔에 메시지 출력
+                            console.log('카카오 로그인 성공');
+                            
+                        },
+                        fail: function (error) {
+                            console.log(error);
+                        }
+                    });
+                },
+                fail: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        // 카카오 로그아웃 버튼 클릭 시 실행할 함수
+        document.getElementById('kakao-logout-button').addEventListener('click', function () {
+            // 카카오 로그아웃 처리
+            Kakao.Auth.logout(function () {
+                document.getElementById('kakao-user-name').innerHTML = '';
+                document.getElementById('kakao-login-button').style.display = 'block';
+                document.getElementById('kakao-logout-button').style.display = 'none';
+            });
+        });
+    </script>
 
   <!-- regist(회원가입) -->
-      <div class="regist">
-        <div class="regist1">
-          <form class="regist2" action="JoinServer">
-            <h3>회원가입</h3>
-            <input type="text" class="regist_2 id" name ="user_id" placeholder="아이디를 입력해주세요"> <button>중복확인</button><br>
-            <input type="password" class="regist_2 pw" name ="user_pw" placeholder="비밀번호를 입력해주세요" style="width: 270px;"><br>
-            <input type="password" class="regist_2 pw2" name ="user_pw2" placeholder="비밀번호 재확인" style="width: 270px;"><br>
-            이름 <input type="name" class="regist_2" name="user_name" placeholder="이름을 입려해주세요!"> <br>
-            성별 <input type="radio" id="gender" class="regist_2" name="gender" value="남자"> 남자
-            <input type="radio" id="gender" class="regist_2" name="gender" value="여자"> 여자 <br>
-            나이<input type="text" class="regist_2" name="age" style="width: 70px">  <br>
-            <input type="text" id="zip-code" placeholder="우편번호" name="zipNum" style="width: 145px;">
-            <input type="button" class="zipSearch" onclick="execDaumPostcode()" value="우편번호 찾기">
-            <input type="text" id="address-1" name="address1" class="regist_2 txt_addr" placeholder="도로명주소" style="width: 270px;">
-            <input type="text" id="address-2" name="address2" class="regist_2 zipCode" placeholder="상세주소" style="width: 270px;"><br>
-            <input type="text" class="regist_2 number" name="phone1" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" name="phone2" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" name="phone3" style="width: 70px;"><br>
-            email<input type="text" class="regist_2" name="email" style="width: 225px"><br>
-            <button><input type="submit" class="regist_2 next" value="다음"></button>
-          </form>
+  <form id="regForm" action="#">
+    <h1>회원가입</h1>
+    <!-- One "tab" for each step in the form: -->
+      <div class="tab">
+        <div>
+          <div class="col-md-12 g-3">
+            <label for="inputId" class="form-label">아이디</label>
+            <input type="text" class="form-control" name ="user_pw" id="inputId" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputPassword4" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" name ="user_pw2" id="inputPassword4" oninput="this.className = ''">
+          </div>
+          <div class="col-12">
+            <label for="inputName4" class="form-label">이름</label>
+            <input type="text" class="form-control" name="user_name" id="inputName4" oninput="this.className = ''">
+          </div>
+          <div class="form-check col-6">
+            <input class="form-check-input" type="radio" name="gender" id=" gender1" oninput="this.className = ''" value="남자">
+            <label class="form-check-label" for="gender1">남성</label>
+          </div>
+          <div class="form-check col-6">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" oninput="this.className = ''" value="여자">
+            <label class="form-check-label" for="gender2">여성</label>
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress" class="form-label">우편번호</label>
+            <input type="text" id="zip-code" class="form-control" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <input type="button" class="form-control zipSearch" onclick="execDaumPostcode()" oninput="this.className = ''" value="우편번호 찾기">
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress1" class="form-label">도로명주소</label>
+            <input type="text" id="address-1" class="form-control regist_2 txt_addr" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress2" class="form-label">상세주소</label>
+            <input type="text" id="address-2" class="form-control regist_2 zipCode" oninput="this.className = ''">
+          </div>
+          <div class="col-12">
+            <label for="inputPhone" class="form-label">연락처</label>
+            <input type="text" id="inputPhone" class="form-control phone" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputEmail4" class="form-label">email</label>
+            <input type="email" class="form-control" name="email" id="inputEmail4" oninput="this.className = ''">
+          </div>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <div>
+          <div>
+            <div>
+              <label for="footSize" class="form-label">발 사이즈</label>
+              <input type="text" id="footSize" name="footSize" class="form-input foot foot_size" oninput="this.className = ''">
+            </div>
+            <div>
+              <label for="footWidth" class="form-label">발 볼 넓이</label>
+              <input type="text" id="footWidth" name="footWidth" class="form-input foot foot_width" oninput="this.className = ''">
+            </div>
+            <div>
+              <label for="footHeight" class="form-label">발 등 높이</label>
+              <input id="footHeight" name="footHeight" class="form-input" oninput="this.className = ''" />
+            </div>
+            <div class="col-6">
+              <input type="radio" id="footFlat" name="footFlat"  value="유" class="form-check-input" oninput="this.className = ''" />
+              <label for="footFlat" class="form-check-label">유</label>
+            </div>
+            <div class="col-6">
+              <input type="radio" id="footFlat1" name="footFlat" value="무" class="form-check-input" oninput="this.className = ''" />
+              <label for="footFlat1" class="form-check-label">무</label>
+            </div>
+          </div>
+      
+          <div>
+            <label for="ice-cream-choice">선호 하는 신발 종류</label>
+            <input list="ice-cream-flavors2" id="ice-cream-choice2" class="foot" name="ice-cream-choice2" oninput="this.className = ''" />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="tab">
+        <div>
+          <div>
+            <label></label>
+            <input type="">
+          </div>
+          <div>
+            <label></label>
+          </div>
         </div>
       </div>
       
-      <!-- footInfo(사용자 정보를 얻기 위한 설문지) -->
-    <div class="footInfo">
-      <div class="footInfo1">
-        <form class="footInfo2">
-          <h3>설문지</h3>
-          <table class="survey">
-            <tr>
-              <td align="left"><span >발 사이즈</span></td>
-              <td><input type="text" name="foot_size" class="foot footSize"></td>
-            </tr>
-            <tr>
-            	<td align="left">발 볼 넓이</td>
-            	<td>
-            		유<input type="radio" name="foot_width" class="footWidth" value="유">
-            		무<input type="radio" name="foot_width" class="footWidth" value="무">
-            	</td>
-            </tr>
-            <tr>
-            	<td align="left">발 등 길이</td>
-            	
-            	<td>
-            		유<input type="radio" name="foot_height" class="footHeight" value="유">
-            		무<input type="radio" name="foot_height" class="footHeight" value="무">
-            	</td>
-            </tr>
-            <tr>
-            	<td align="left">평발</td>
-            	<td>
-            		유<input type="radio" name="foot_flat" class="footFlat" value="유">
-            		무<input type="radio" name="foot_flat" class="footFlat" value="무">
-            	</td>
-            </tr>
-          </table>
-          
-          <button><a href="#" class="membership_btn membership1">다음</a></button>
-        </form>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
       </div>
     </div>
-
-    <!-- Positive -->
-    <div class="ball_of_foot">
-      <div class="ball_of_foot_1">
-        <form>
-          <h4>긍정적</h4>
-          <tr>
-            <td colspan="3"><p>발 볼은 어땠나요?</p></td>
-          </tr>
-          <tr>
-            <td>컸다<input type="radio" name="ball" value="컸다"></td>
-            <td>적절했다<input type="radio" name="ball" value="적절했다"></td>
-            <td>좁았다<input type="radio" name="ball" value="좁았다"></td>
-          </tr>
-          
-          
-          
-        </form>
-      </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
     </div>
+  </form>
 
   <!-- header -->
   <div class="site-wrap">
@@ -163,6 +242,8 @@
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
               <div class="site-top-icons">
                 <ul>
+                   <!-- 사용자 이름 출력 -->
+    			  <li><div id = "kakao-user-name"></div></li>
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
                   <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
                   <li>
@@ -222,6 +303,43 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
+            <li class="has-children">
+              <a href="shop.html">Shop</a>
+              <ul class="dropdown">
+                <li class="has-children">
+                  <a href="#">워킹화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">런닝화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">트레킹화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">등산화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>
@@ -277,50 +395,82 @@
       </div>
     </div> -->
     
-    <div class="site-section site-blocks-2">
+    <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>나중에 사용 할 목록</h2>
+            <h2>인기 Top10</h2>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="images/women.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>Women</h3>
+          <div class="col-md-12">
+            <div class="nonloop-block-3 owl-carousel">
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Tank Top</a></h3>
+                    <p class="mb-0">Finding perfect t-shirt</p>
+                    <p class="text-primary font-weight-bold">$50</p>
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="images/children.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>Children</h3>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Corater</a></h3>
+                    <p class="mb-0">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold">$50</p>
+                  </div>
+                </div>
               </div>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <a class="block-2-item" href="#">
-              <figure class="image">
-                <img src="images/men.jpg" alt="" class="img-fluid">
-              </figure>
-              <div class="text">
-                <span class="text-uppercase">Collections</span>
-                <h3>Men</h3>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="images/cloth_2.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Polo Shirt</a></h3>
+                    <p class="mb-0">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold">$50</p>
+                  </div>
+                </div>
               </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="images/cloth_3.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">T-Shirt Mockup</a></h3>
+                    <p class="mb-0">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold">$50</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="block-4 text-center">
+                  <figure class="block-4-image">
+                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
+                  </figure>
+                  <div class="block-4-text p-4">
+                    <h3><a href="#">Corater</a></h3>
+                    <p class="mb-0">Finding perfect products</p>
+                    <p class="text-primary font-weight-bold">$50</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             </a>
           </div>
           <!-- banner -->
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
-            <a target="_blank" href="#">
+            <a target="_blank" href="popup_banner.jsp">
               <img src="./images/working.png" width= "200" height="300" border="1">
             </a>
           </div>
@@ -503,6 +653,7 @@
   <script src="js/aos.js"></script>
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/button.js"></script>
 
   </body>
 </html>
