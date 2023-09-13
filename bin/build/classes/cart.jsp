@@ -30,17 +30,18 @@
         <div class="container">
           <div class="row align-items-center">
 
-            <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-              <form action="" class="site-block-top-search">
-                <span class="icon icon-search2"></span>
-                <input type="text" class="form-control border-0" placeholder="Search">
-              </form>
+            <div class="col-6 col-md-4 order-2 order-md-1 text-center">
+              <div class="site-logo">
+                <a href="index.jsp" class="js-logo-clone">In Foot <br> Out Foot</a>
+              </div>
             </div>
 
-            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
-              <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">Shoppers</a>
-              </div>
+            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
+              <form action="productSearch" class="site-block-top-search">
+                <span class="icon icon-search2"></span>
+                <!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
+                <input type="text" class="form-control border-0" name="search" placeholder="Search">
+              </form>
             </div>
 
             <div class="col-6 col-md-4 order-3 order-md-3 text-right">
