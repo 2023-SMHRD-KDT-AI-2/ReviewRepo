@@ -25,6 +25,7 @@
 	<!-- -->
 	<mappers>
 		<mapper resource="com/smhrd/model/User.xml" />
+		<mapper resource="com/smhrd/model/ProductMapper.xml" />
 	</mappers>
 	
 </configuration>
