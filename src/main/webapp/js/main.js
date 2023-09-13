@@ -255,14 +255,7 @@ jQuery(document).ready(function($) {
 
 	$(function(){
 		$('.join').click(function(){
-			$('.regist').show();
-		})
-	});
-	
-	// 회원가입 폼에서 다음 버튼을 누르면 설문지로 이동
-	$(function(){
-		$('.next').click(function(){
-			$('.footInfo').show()
+			$('#regForm').show();
 		})
 	});
 	

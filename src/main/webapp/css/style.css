@@ -135,7 +135,7 @@ a {
 .site-navbar {
   background: #fff;
   margin-bottom: 0px;
-  z-index: 1999;
+  z-index: 8;
   position: relative; }
   .site-navbar.transparent {
     background: transparent; }
@@ -232,7 +232,7 @@ a {
         .site-navbar .site-navigation .site-menu > li > a:hover {
           color: #7971ea; }
     .site-navbar .site-navigation .site-menu .has-children {
-      position: relative; }
+      position: relative;}
       .site-navbar .site-navigation .site-menu .has-children > a {
         position: relative;
         padding-right: 20px; }
@@ -763,6 +763,7 @@ a {
     margin-top:-50px;
     margin-right: 185px;
     right:0;
+    z-index: 8;
   }
   
   /* popup */

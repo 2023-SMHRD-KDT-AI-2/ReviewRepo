@@ -1,57 +1,5 @@
-.regist {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
-    z-index: 10;
-    display: none;
-  }
-  
-  .regist1{
-    width: 400px;
-    height: 450px;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .regist2{
-    margin-top: 30px;
-  }
-
   .regist_2 {
     margin: 5px;
-  }
-
-  .footInfo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
-    z-index: 10;
-    display: none;
-  }
-  
-  .footInfo1{
-    width: 400px;
-    height: 450px;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-  .footInfo2{
-    margin-top: 30px;
   }
 
   .survey {
@@ -61,30 +9,15 @@
   .membership1 {
     text-decoration: none;
     color: black;
-  }
-
-
-  .ball_of_foot {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0);
-    z-index: 10;
-    display: none;
+  }  
+  
+  .round {
+    border-radius: 50%;
   }
   
-  .ball_of_foot_1{
-    width: 400px;
-    height: 450px;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin-top: 30px;
+  /* 색깔 찾아보기 */
+  .zipSearch {
+    background-color: grey;
+    color: aliceblue;
   }
-  
   
