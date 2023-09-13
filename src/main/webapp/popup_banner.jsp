@@ -11,9 +11,35 @@
             height: 200px; /* 높이는 자동으로 조정됩니다. */
         }
     </style>
+   
+</head>
+<body>
+    <h1>신발 추천 테스트</h1>
+    
+    <div id="questionContainer">
+        <p id="question">달리기? 걷기? 좋아하는 곳은?</p>
+        <div id="images">
+            <label>
+                <input type="radio" name="image" id="imageAInput" value="걷기" style="display: none;">
+                <img id="imageA" class="image" src="images/걷기.jpg" alt="걷기 이미지" onclick="nextQuestion()">
+            </label>
+            <label>
+                <input type="radio" name="image" id="imageBInput" value="달리기" style="display: none;">
+                <img id="imageB" class="image" src="images/달리기.jpg" alt="달리기 이미지" onclick="nextQuestion()">
+            </label>
+        </div>
+    </div>
+
+    <div id="result" style="display: none;">
+        <p id="recommendation">당신에게 어울리는 신발 추천이 여기에 표시됩니다.</p>
+    </div>
+
     <script type="text/javascript">
         var currentQuestion = 0; // 현재 질문 인덱스를 저장할 변수
-        var selectedImages = []; // 선택한 이미지를 저장할 배열
+        var selectedImages = {
+            '걷기': 0,
+            '달리기': 0
+        }; // 선택한 이미지를 저장할 객체
 
         function nextQuestion() {
             var questions = [
@@ -39,7 +65,7 @@
                 if (selectedImage) {
                     // 사용자가 이미지를 선택한 경우에만 질문을 다음으로 이동
                     currentQuestion++;
-                    selectedImages.push(selectedImage.value);
+                    selectedImages[selectedImage.value]++;
                 }
 
                 // 질문이 아직 남아있으면 다음 질문을 표시
@@ -50,54 +76,24 @@
                 } else {
                     // 마지막 질문 후 결과 표시
                     var resultContainer = document.getElementById("result");
-                    var result = "당신의 선택한 이미지: " + selectedImages.join(", ");
+                    var result = "당신에게 추천하는 신발은: ";
+                    var recommendations = [];
+
+                    // 선택한 이미지에 따라 결과를 정리
+                    if (selectedImages['달리기'] >= selectedImages['걷기']) {
+                        recommendations.push("달리기 신발");
+                    }
+                    if (selectedImages['걷기'] >= selectedImages['달리기']) {
+                        recommendations.push("걷기 신발");
+                    }
+
+                    result += recommendations.join(", ");
                     resultContainer.textContent = result;
                     document.getElementById("images").style.display = "none";
                     resultContainer.style.display = "block";
-
-                    // 선택한 이미지에 따라 결과 출력
-                    displayRecommendation(selectedImages);
                 }
             }
         }
-
-        function displayRecommendation(selectedImages) {
-            // 선택한 이미지에 따라 결과를 출력
-            var recommendation = "";
-
-            // 예시: 선택한 이미지에 따라 추천 신발을 설정
-            if (selectedImages.includes("달리기")) {
-                recommendation = "달리기 신발을 추천합니다.";
-            } else if (selectedImages.includes("산")) {
-                recommendation = "등산화를 추천합니다.";
-            } else {
-                recommendation = "일반 스니커즈를 추천합니다.";
-            }
-
-            // 결과를 화면에 표시
-            document.getElementById("recommendation").textContent = recommendation;
-        }
     </script>
-</head>
-<body>
-    <h1>신발 추천 테스트</h1>
-    
-    <div id="questionContainer">
-        <p id="question">달리기? 걷기? 좋아하는 곳은?</p>
-        <div id="images">
-            <label>
-                <input type="radio" name="image" id="imageAInput" value="걷기" style="display: none;">
-                <img id="imageA" class="image" src="images/걷기.jpg" alt="걷기 이미지" onclick="nextQuestion()">
-            </label>
-            <label>
-                <input type="radio" name="image" id="imageBInput" value="달리기" style="display: none;">
-                <img id="imageB" class="image" src="images/달리기.jpg" alt="달리기 이미지" onclick="nextQuestion()">
-            </label>
-        </div>
-    </div>
-
-    <div id="result" style="display: none;">
-        <p id="recommendation">당신에게 어울리는 신발 추천이 여기에 표시됩니다.</p>
-    </div>
 </body>
 </html>

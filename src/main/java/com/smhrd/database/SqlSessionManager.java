@@ -13,7 +13,7 @@ public class SqlSessionManager {
 	
 	static {
 		try {
-			String resource = "config.xml";
+			String resource = "com/smhrd/database/config.xml";
 			
 			InputStream inputStream = 
 					Resources.getResourceAsStream(resource);

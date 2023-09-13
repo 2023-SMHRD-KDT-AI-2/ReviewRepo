@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.PopularRankMapper">
+
+	<!-- 이미지를 보내는 sql 문장 작성! -->
+	<!-- pro_id(시퀀스), img_id, img1_path, img2_path, img3_path,img_time(올린일자) -->
+	<select id="list" resultType="com.smhrd.model.PopularRank">
+SELECT a.pro_name, b.*
+FROM product a
+INNER JOIN product_img b ON a.pro_id = b.pro_id
+	</select>
+
+
+</mapper>
