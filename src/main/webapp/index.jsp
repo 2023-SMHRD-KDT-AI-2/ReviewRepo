@@ -1,5 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.smhrd.model.PopularRank"%>
+<%@page import="com.smhrd.model.PopularRankDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +28,8 @@
     <link rel="stylesheet" href="css/button.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9dd5ee0fd1.js" crossorigin="anonymous"></script>
+    <!-- 카카오 로그인 SDK 로드 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
   </head>
   <body>
    <!-- popup(팝업창) -->
@@ -38,7 +44,7 @@
     
 
   <!-- login(로그인) -->
-      <div class="loginBg">
+      <zdiv class="loginBg">
           <div class="login-form">
               <form>
                   <h3>로그인</h3>
@@ -50,15 +56,19 @@
               <div class="links">
                   <a href="#" class="join">회원가입</a>&nbsp;&nbsp;
                   <a href="#">비밀번호를 잊어버리셨나요?</a>
+               </div>
+               
+               
+               
+               
                <!-- 카카오 로그아웃 버튼 -->
     			
               <img id="kakao-login-button" src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
               <button id="kakao-logout-button" style="display: none;">카카오 로그아웃</button>
              
               <a href="#" class="fa-regular fa-x"></a>
-          	</div>
-      	</div>
-      </div>
+          </div>
+      </zdiv>
    <script type="text/javascript">
         // 카카오 SDK 초기화
         Kakao.init('1860b45a3b2095c23c88e54daa78ccb8');
@@ -106,7 +116,6 @@
             });
         });
     </script>
-
   <!-- regist(회원가입) -->
   <form id="regForm" action="#">
     <h1>회원가입</h1>
@@ -361,39 +370,7 @@
       </div>
     </div>
 
-    <!-- <div class="site-section site-section-sm site-blocks-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-truck"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Free Shipping</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-refresh2"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Free Returns</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-help"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Customer Support</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    
     
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
@@ -402,81 +379,30 @@
             <h2>인기 Top10</h2>
           </div>
         </div>
+     <%
+				PopularRankDAO dao = new PopularRankDAO();
+			
+				ArrayList<PopularRank> ranklist = new ArrayList<>();
+				ranklist = dao.list();
+				session.setAttribute("list", ranklist);
+			%>
+       
+        
         <div class="row">
-          <div class="col-md-12">
-            <div class="nonloop-block-3 owl-carousel">
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Tank Top</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_2.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Polo Shirt</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_3.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">T-Shirt Mockup</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </a>
+        <c:forEach var="ranklist" items="${list}" varStatus="status">
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
+            <a class="block-2-item" href="#">
+              <figure class="image">
+                <img src="${ranklist.img1_path}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <span class="text-uppercase"></span>
+                <h3>${ranklist.pro_name}</h3>
           </div>
-          <!-- banner -->
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
-            <a target="_blank" href="popup_banner.jsp">
-              <img src="./images/working.png" width= "200" height="300" border="1">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+         </a>
+         </div>
+         </c:forEach>
+    
     
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
@@ -488,19 +414,25 @@
         <div class="row">
           <div class="col-md-12">
             <div class="nonloop-block-3 owl-carousel">
+              
+            <c:forEach var="ranklist" items="${list}" varStatus="status">  
+              
               <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
-                    <img src="images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
+                    <img src="${ranklist.img1_path}" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="#">Tank Top</a></h3>
+                    <h3><a href="#">${ranklist.pro_name}</a></h3>
                     <p class="mb-0">Finding perfect t-shirt</p>
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
               </div>
-              <div class="item">
+              
+              </c:forEach> 
+              
+              <!-- <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
@@ -547,7 +479,10 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
-              </div>
+              </div>-->
+              
+              
+              
             </div>
           </div>
         </div>

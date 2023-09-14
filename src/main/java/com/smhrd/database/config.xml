@@ -28,6 +28,7 @@
 		<mapper resource="com/smhrd/model/SearchMapper.xml" />
 		<mapper resource="com/smhrd/model/CartMapper.xml" />
 		<mapper resource="com/smhrd/model/ProductMapper.xml" />
+		<mapper resource="com/smhrd/model/PopularRankMapper.xml" />
 	</mappers>
 	
 </configuration>
