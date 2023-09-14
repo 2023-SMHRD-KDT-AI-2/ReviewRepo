@@ -55,4 +55,9 @@ public class CartDAO {
 		
 		return cnt;
 	}
+	
+	// 카트 수량 리턴하기
+	public int HowManyProductsInTheCart(String userid) {
+		return getUserCartList("TEST1").size();
+	}
 }
