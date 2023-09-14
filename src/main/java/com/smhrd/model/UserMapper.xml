@@ -3,7 +3,7 @@
 <mapper namespace="com.smhrd.model.User">
 
 	<insert id="Join" parameterType="com.smhrd.model.User" >
-		insert into test values(
+		insert into userinfo values(
 			#{user_id},
 			#{user_pw},
 			#{user_name},
@@ -13,6 +13,18 @@
 			#{phone},
 			#{email},
 			sysdate
+		)
+		
+	</insert>
+	
+	<insert id="UserFoot" parameterType="com.smhrd.model.UserFoot">
+		insert into foot values(
+			#{user_id},
+			#{foot_size},
+			#{foot_width},
+			#{foot_height},
+			#{foot_flat}
+			
 		)
 		
 	</insert>

@@ -46,8 +46,7 @@
 							</div>
 						</div>
 
-						<div
-							class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
+						<div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
 							<form action="productSearch" class="site-block-top-search">
 								<span class="icon icon-search2"></span>
 								<!-- text부분을 데이터베이스에 가져와서 비교작업!! -->

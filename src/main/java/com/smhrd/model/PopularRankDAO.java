@@ -13,6 +13,7 @@ public class PopularRankDAO {
 	
 	ArrayList<PopularRank> ranklist = new ArrayList<>();
 	
+		
 	public ArrayList<PopularRank> list(){
 
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
@@ -39,3 +40,4 @@ public class PopularRankDAO {
 	
 	
 }
+

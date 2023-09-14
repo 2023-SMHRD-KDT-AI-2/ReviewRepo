@@ -14,7 +14,7 @@ import com.smhrd.model.UserDAO;
 import com.smhrd.model.UserFoot;
 import com.smhrd.model.UserFootDAO;
 
-@WebServlet("/JoinServer")
+@WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -23,16 +23,16 @@ public class JoinService extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	
 		
-		String user_id = request.getParameter("user_id");
+		String user_id = request.getParameter("user_id"); 
 		String user_pw = request.getParameter("user_pw");
 		String user_name = request.getParameter("user_name");
-		String user_gender = request.getParameter("gender");
+		String user_gender = request.getParameter("user_gender");
 		String age = request.getParameter("age");
-		String phone = request.getParameter("phone");
-		String email = request.getParameter("email");
 		String zipNum = request.getParameter("zipNum");
 		String address1 = request.getParameter("address1");
 		String address2 = request.getParameter("address2");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
 		
 		String address = zipNum + address1 + address2;
 		
@@ -41,9 +41,7 @@ public class JoinService extends HttpServlet {
 		String foot_width = request.getParameter("foot_width");
 		String foot_height = request.getParameter("foot_height");
 		String foot_flat = request.getParameter("foot_flat");
-		
-		int foot_size = Integer.parseInt(temp);
-		
+		int foot_size = 0;
 		
 		
 		UserDAO dao = new UserDAO();
@@ -53,9 +51,10 @@ public class JoinService extends HttpServlet {
 		user.setUser_name(user_name);
 		user.setUser_gender(user_gender);
 		user.setAge(age);
+		user.setAddress(address);
 		user.setPhone(phone);
 		user.setEmail(email);
-		user.setAddress(address);
+		
 		
 		
 		
@@ -70,10 +69,19 @@ public class JoinService extends HttpServlet {
 		
 		
 		
-		int cnt = dao.Join(user);
+		int cnt1 = dao.Join(user);
+		int cnt2 = footDao.JoinFoot(userfoot);
 		
-		String url = "WEB-INF/index.jsp";
+		String url = "index.jsp";
 		
+		if(temp != null) {
+			try {
+				foot_size = Integer.parseInt(temp);
+			}catch(NumberFormatException e) {
+				
+				
+			}
+		}
 		
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
