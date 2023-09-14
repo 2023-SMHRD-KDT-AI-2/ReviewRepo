@@ -26,6 +26,7 @@
 	<mappers>
 		<mapper resource="com/smhrd/model/UserMapper.xml" />
 		<mapper resource="com/smhrd/model/SearchMapper.xml" />
+		<mapper resource="com/smhrd/model/CartMapper.xml" />
 		<mapper resource="com/smhrd/model/ProductMapper.xml" />
 	</mappers>
 	

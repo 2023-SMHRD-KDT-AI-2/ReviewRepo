@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.CartMapper">
+
+
+<!--user id가 일치하는 회원의 전체 장바구니 정보 불러오기 -->
+	<select id="userCartList" parameterType="string" resultType="com.smhrd.model.Cart">
+		select * from shopping
+		where user_id=#{userId}
+	</select>
+
+<!-- 불러온 상품id와 일치하는 상품정보 불러오기(상품이미지, 상품명, 가격) -->
+	<select id="productNameAndPriceList" parameterType="string" resultType="com.smhrd.model.ProductInfo">
+		select pro_name, pro_price from product
+		where pro_id=#{proId}
+	</select>
+
+<!-- 불러온 상품id와 일치하는 이미지 리스트 불러오기-->
+	<select id="productImageList" parameterType="string" resultType="string">
+		select img1_path from product_img
+		where pro_id=#{proid}
+	</select>
+
+<!-- 불러온 상품id와 일치하는 장바구니 행 삭제-->
+	<delete id="DeleteCartOne" parameterType="string">
+		delete from shopping
+		where pro_id=#{proid}
+	</delete>
+
+</mapper>
