@@ -29,6 +29,13 @@
 		
 	</insert>
 	
+	<select id="Login" resultType="com.smhrd.model.User">
+	
+		select * from userinfo 
+		where user_id=#{user_id} and user_pw=#{user_pw}
+	
+	</select>
+	
 
 
 

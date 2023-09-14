@@ -1,5 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="java.lang.reflect.Array"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -7,6 +5,9 @@
 <%@page import="com.smhrd.model.*"%>
 <%@page import="java.util.List"%>
 <%@ page import="com.smhrd.model.Product"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+
 
 
 <!DOCTYPE html>
@@ -44,21 +45,12 @@
 					<div class="row align-items-center">
 
 						<div
-							class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
-							<form action="productSearch" class="site-block-top-search">
-								<span class="icon icon-search2"></span>
-								<!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
-								<input type="text" class="form-control border-0" name="search"
-									placeholder="Search">
+							class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+							<form action="" class="site-block-top-search">
+								<span class="icon icon-search2"></span> <input type="text"
+									class="form-control border-0" placeholder="Search">
 							</form>
 						</div>
-
-
-
-
-
-
-
 
 						<div
 							class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
@@ -72,8 +64,27 @@
 						<div class="col-6 col-md-4 order-3 order-md-3 text-right">
 							<div class="site-top-icons">
 								<ul>
+									<%
+									String user_id = null;
+									if (session.getAttribute("user_id") != null) {
+										user_id = (String) session.getAttribute("user_id");
+									}
+									%>
+									<%
+									if (user_id == null) {
+									%>
 									<li><a href="#"><span class="icon icon-person"></span></a></li>
-									<!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
+									<%
+									} else if (user_id != null) {
+									%>
+									<li><span
+										style="color: black; text-decoration: underline; text-underline-position: under;"><strong>${info.user_id}</strong></span>님
+										환영합니다</li>
+									<li><a href="LogoutService"><span
+											class="icon icon-person"></span></a></li>
+									<%
+									}
+									%>
 									<li><a href="cart.jsp" class="site-cart"> <span
 											class="icon icon-shopping_cart"></span> <span class="count">2</span>
 									</a></li>
@@ -117,11 +128,11 @@
 				</div>
 			</nav>
 		</header>
-		
-		
 
+		<!--  forEach문 시작 -->
 
-		<c:forEach var="product" items="${productList}" varStatus="status">
+		<c:forEach var="product" items="${productList}">
+			<fmt:formatNumber value="${pro_price}" pattern="#,###" />
 			<div class="bg-light py-3">
 				<div class="container">
 					<div class="row">
@@ -153,26 +164,24 @@
 
 
 							<p class="mb-4"></p>
+							<p class="text-primary my-line-through"
+								style="float: left; padding-right: 15px;">
+								<fmt:formatNumber value="${product.pro_price}" pattern="#,###" />
+								원
+							</p>
+
 							<p>
-								<strong class="text-primary h4">${product.pro_price}원</strong>
+								<strong class="text-primary h4"><fmt:formatNumber
+										value="${product.pro_cost}" pattern="#,###" />원</strong>
 							</p>
 		</c:forEach>
-		<!--  
-              <label for="option-sm" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-sm" name="shop-sizes"></span> <span class="d-inline-block text-black">Small</span>
-              </label>
-              <label for="option-md" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-md" name="shop-sizes"></span> <span class="d-inline-block text-black">Medium</span>
-              </label>
-              <label for="option-lg" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-lg" name="shop-sizes"></span> <span class="d-inline-block text-black">Large</span>
-              </label>
-              <label for="option-xl" class="d-flex mr-3 mb-3">
-                <span class="d-inline-block mr-2" style="top:-2px; position: relative;"><input type="radio" id="option-xl" name="shop-sizes"></span> <span class="d-inline-block text-black"> Extra Large</span>
-              </label>
-              -->
-		<!--  옵션으로 사이즈 바꾸기 -->
 
+
+
+
+
+		<!--  옵션으로 사이즈 바꾸기 -->
+		<br>
 		<div class="mb-1 d-flex" style="float: left; margin-right: 20px;">
 			<select id="shoe_size" name="shoe_size"
 				style="width: 120px; height: 43px;">
