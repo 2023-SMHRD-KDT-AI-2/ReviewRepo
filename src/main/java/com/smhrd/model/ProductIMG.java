@@ -1,16 +1,26 @@
 package com.smhrd.model;
 
 import lombok.AllArgsConstructor;
+
+
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+@Getter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cart {
+public class ProductIMG {
 
-	
-	private String user_id;
 	private String pro_id;
-	private int pro_volume;
+	private String img_id;
+	private String img1_path;
+	private String img2_path;
+	private String img3_path;
+	
+	
+	
 }
+
+

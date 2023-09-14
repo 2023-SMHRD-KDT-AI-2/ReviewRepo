@@ -7,10 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductInfo {
+public class ProductDetail {
 	private String pro_id;
 	private String pro_name;
+	private String pro_category;
+	private String pro_brand;
+	private String pro_info;
 	private int pro_price;
-	private int pro_volume;
+	private String pro_material;
 	
 }

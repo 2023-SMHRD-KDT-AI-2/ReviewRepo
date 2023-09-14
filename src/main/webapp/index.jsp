@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/regist.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9dd5ee0fd1.js" crossorigin="anonymous"></script>
     <!-- 카카오 로그인 SDK 로드 -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -115,115 +117,115 @@
         });
     </script>
   <!-- regist(회원가입) -->
-      <div class="regist">
-        <div class="regist1">
-          <form class="regist2">
-            <h3>회원가입</h3>
-            <input type="text" class="regist_2 id" placeholder="아이디를 입력해주세요"> <button>중복확인</button><br>
-            <input type="password" class="regist_2 pw" placeholder="비밀번호를 입력해주세요" style="width: 270px;"><br>
-            <input type="password" class="regist_2 pw2" placeholder="비밀번호 재확인" style="width: 270px;"><br>
-            성별 <input type="radio" class="regist_2" name="gender" value="men"> 남자
-            <input type="radio" class="regist_2" name="gender" value="women"> 여자 <br>
-            <input type="text" class="regist_2 number" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" style="width: 70px;"> - 
-            <input type="text" class="regist_2 number" style="width: 70px;"><br>
-            <input type="text" id="zip-code" placeholder="우편번호" style="width: 145px;">
-            <input type="button" class="zipSearch" onclick="execDaumPostcode()" value="우편번호 찾기">
-            <input type="text" id="address-1" class="regist_2 txt_addr" placeholder="도로명주소" style="width: 270px;">
-            <input type="text" id="address-2" class="regist_2 zipCode" placeholder="상세주소" style="width: 270px;"><br>
-            <button><a hrdf="#" class="regist_2 next">다음</a></button>
-          </form>
+  <form id="regForm" action="#">
+    <h1>회원가입</h1>
+    <!-- One "tab" for each step in the form: -->
+      <div class="tab">
+        <div>
+          <div class="col-md-12 g-3">
+            <label for="inputId" class="form-label">아이디</label>
+            <input type="text" class="form-control" name ="user_pw" id="inputId" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputPassword4" class="form-label">비밀번호</label>
+            <input type="password" class="form-control" name ="user_pw2" id="inputPassword4" oninput="this.className = ''">
+          </div>
+          <div class="col-12">
+            <label for="inputName4" class="form-label">이름</label>
+            <input type="text" class="form-control" name="user_name" id="inputName4" oninput="this.className = ''">
+          </div>
+          <div class="form-check col-6">
+            <input class="form-check-input" type="radio" name="gender" id=" gender1" oninput="this.className = ''" value="남자">
+            <label class="form-check-label" for="gender1">남성</label>
+          </div>
+          <div class="form-check col-6">
+            <input class="form-check-input" type="radio" name="gender" id="gender2" oninput="this.className = ''" value="여자">
+            <label class="form-check-label" for="gender2">여성</label>
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress" class="form-label">우편번호</label>
+            <input type="text" id="zip-code" class="form-control" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <input type="button" class="form-control zipSearch" onclick="execDaumPostcode()" oninput="this.className = ''" value="우편번호 찾기">
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress1" class="form-label">도로명주소</label>
+            <input type="text" id="address-1" class="form-control regist_2 txt_addr" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputAddress2" class="form-label">상세주소</label>
+            <input type="text" id="address-2" class="form-control regist_2 zipCode" oninput="this.className = ''">
+          </div>
+          <div class="col-12">
+            <label for="inputPhone" class="form-label">연락처</label>
+            <input type="text" id="inputPhone" class="form-control phone" oninput="this.className = ''">
+          </div>
+          <div class="col-md-12">
+            <label for="inputEmail4" class="form-label">email</label>
+            <input type="email" class="form-control" name="email" id="inputEmail4" oninput="this.className = ''">
+          </div>
+        </div>
+      </div>
+    
+      <div class="tab">
+        <div>
+          <div>
+            <div>
+              <label for="footSize" class="form-label">발 사이즈</label>
+              <input type="text" id="footSize" name="footSize" class="form-input foot foot_size" oninput="this.className = ''">
+            </div>
+            <div>
+              <label for="footWidth" class="form-label">발 볼 넓이</label>
+              <input type="text" id="footWidth" name="footWidth" class="form-input foot foot_width" oninput="this.className = ''">
+            </div>
+            <div>
+              <label for="footHeight" class="form-label">발 등 높이</label>
+              <input id="footHeight" name="footHeight" class="form-input" oninput="this.className = ''" />
+            </div>
+            <div class="col-6">
+              <input type="radio" id="footFlat" name="footFlat"  value="유" class="form-check-input" oninput="this.className = ''" />
+              <label for="footFlat" class="form-check-label">유</label>
+            </div>
+            <div class="col-6">
+              <input type="radio" id="footFlat1" name="footFlat" value="무" class="form-check-input" oninput="this.className = ''" />
+              <label for="footFlat1" class="form-check-label">무</label>
+            </div>
+          </div>
+      
+          <div>
+            <label for="ice-cream-choice">선호 하는 신발 종류</label>
+            <input list="ice-cream-flavors2" id="ice-cream-choice2" class="foot" name="ice-cream-choice2" oninput="this.className = ''" />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      <div class="tab">
+        <div>
+          <div>
+            <label></label>
+            <input type="">
+          </div>
+          <div>
+            <label></label>
+          </div>
         </div>
       </div>
       
-      <!-- footInfo(사용자 정보를 얻기 위한 설문지) -->
-    <div class="footInfo">
-      <div class="footInfo1">
-        <form class="footInfo2">
-          <h3>설문지</h3>
-          <table class="survey">
-            <tr>
-              <td align="left"><span >발 사이즈</span></td>
-              <td><input type="text" class="foot footSize"></td>
-            </tr>
-            <tr>
-              <td align="left"><span >신어본 신발</span></td>
-              <td><input type="text" class="foot shoes"></td>
-            </tr>
-            <tr>
-              <td align="left"><label for="ice-cream-choice">긍정적인 신발</label></td>
-              <td>
-                <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-  
-                <datalist id="ice-cream-flavors">
-                  <option value="NIKE"></option>
-                  <option value="ADIDAS"></option>
-                  <option value="VANS"></option>
-                  <option value="CONVERSE"></option>
-                  <option value="FILA"></option>
-                </datalist>
-              </td>
-            </tr>
-            <tr>
-              <td align="left"><label for="ice-cream-choice">부정적인 신발</label></td>
-              <td>
-                <input list="ice-cream-flavors1" id="ice-cream-choice1" name="ice-cream-choice1" />
-  
-                <datalist id="ice-cream-flavors1">
-                  <option value="NIKE"></option>
-                  <option value="ADIDAS"></option>
-                  <option value="VANS"></option>
-                  <option value="CONVERSE"></option>
-                  <option value="FILA"></option>
-                </datalist>
-              </td>
-            </tr>
-            <tr>
-              <td align="left"><label for="ice-cream-choice">선호 하는 신발 종류</label></td>
-              <td>
-                <input list="ice-cream-flavors2" id="ice-cream-choice2" class="foot" name="ice-cream-choice2" />
-  
-                <datalist id="ice-cream-flavors2">
-                  <option value="로우탑"></option>
-                  <option value="미들탑"></option>
-                  <option value="하이탑"></option>
-                  <option value="구두"></option>
-                  <option value="스니커즈"></option>
-                  <option value="캔버스화"></option>
-                  <option value="운동화"></option>
-                  <option value="워커"></option>
-                  <option value="크록스"></option>
-                  <option value="샌들"></option>
-                  <option value="슬리퍼"></option>
-                </datalist>
-              </td>
-            </tr>
-          </table>
-          
-          <button><a href="#" class="membership_btn membership1">다음</a></button>
-        </form>
+    <div style="overflow:auto;">
+      <div style="float:right;">
+        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
       </div>
     </div>
-
-    <!-- Positive -->
-    <div class="ball_of_foot">
-      <div class="ball_of_foot_1">
-        <form>
-          <h4>긍정적</h4>
-          <tr>
-            <td colspan="3"><p>발 볼은 어땠나요?</p></td>
-          </tr>
-          <tr>
-            <td>컸다<input type="radio" name="ball" value="컸다"></td>
-            <td>적절했다<input type="radio" name="ball" value="적절했다"></td>
-            <td>좁았다<input type="radio" name="ball" value="좁았다"></td>
-          </tr>
-          
-          
-          
-        </form>
-      </div>
+    <!-- Circles which indicates the steps of the form: -->
+    <div style="text-align:center;margin-top:40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
     </div>
+  </form>
 
   <!-- header -->
   <div class="site-wrap">
@@ -239,9 +241,10 @@
             </div>
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
-              <form action="" class="site-block-top-search">
+              <form action="productSearch" class="site-block-top-search">
                 <span class="icon icon-search2"></span>
-                <input type="text" class="form-control border-0" placeholder="Search">
+                <!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
+                <input type="text" class="form-control border-0" name="search" placeholder="Search">
               </form>
             </div>
 
@@ -253,7 +256,7 @@
                   <li><a href="#"><span class="icon icon-person"></span></a></li>
                   <!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
                   <li>
-                    <a href="Cart" class="site-cart">
+                    <a href="cart.jsp" class="site-cart">
                       <span class="icon icon-shopping_cart"></span>
                       <span class="count">2</span>
                     </a>
@@ -309,6 +312,43 @@
                 <li><a href="#">Menu Three</a></li>
               </ul>
             </li>
+            <li class="has-children">
+              <a href="shop.html">Shop</a>
+              <ul class="dropdown">
+                <li class="has-children">
+                  <a href="#">워킹화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">런닝화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">트레킹화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+                <li class="has-children">
+                  <a href="#">등산화</a>
+                  <ul class="dropdown">
+                    <li><a href="#">Menu One</a></li>
+                    <li><a href="#">Menu Two</a></li>
+                    <li><a href="#">Menu Three</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>
@@ -330,45 +370,13 @@
       </div>
     </div>
 
-    <!-- <div class="site-section site-section-sm site-blocks-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-truck"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Free Shipping</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-refresh2"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Free Returns</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 d-lg-flex mb-4 mb-lg-0 pl-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon mr-4 align-self-start">
-              <span class="icon-help"></span>
-            </div>
-            <div class="text">
-              <h2 class="text-uppercase">Customer Support</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
     
-    <div class="site-section site-blocks-2">
+    
+    <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>나중에 사용 할 목록</h2>
+            <h2>인기 Top10</h2>
           </div>
         </div>
      <%
@@ -387,23 +395,14 @@
               <figure class="image">
                 <img src="${ranklist.img1_path}" alt="" class="img-fluid">
               </figure>
-            
               <div class="text">
                 <span class="text-uppercase"></span>
                 <h3>${ranklist.pro_name}</h3>
-              </div>
-            </a>
           </div>
+         </a>
+         </div>
          </c:forEach>
-          <!-- banner -->
-          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
-            <a target="_blank" href="popup_banner.jsp">
-              <img src="./images/working.png" width= "200" height="300" border="1">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
     
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
@@ -589,6 +588,7 @@
   <script src="js/aos.js"></script>
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/button.js"></script>
 
   </body>
 </html>

@@ -48,61 +48,12 @@
                   <a href="#" class="join">회원가입</a>&nbsp;&nbsp;
                   <a href="#">비밀번호를 잊어버리셨나요?</a>
               </div>
-            <!-- 카카오 로그아웃 버튼 -->
-    			
-              <img id="kakao-login-button" src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
-              <button id="kakao-logout-button" style="display: none;">카카오 로그아웃</button>
-             
+              <img src="./images/btnW_완성형.png" value="naverLogin" class="loginApi">
+              <img src="./images/kakaoLogin.png" value="kakaoLogin" class="loginApi"><br>
               <a href="#" class="fa-regular fa-x"></a>
           </div>
       </zdiv>
-   <script type="text/javascript">
-        // 카카오 SDK 초기화
-        Kakao.init('1860b45a3b2095c23c88e54daa78ccb8');
 
-        // 로그인 버튼 클릭 시 실행할 함수
-        document.getElementById('kakao-login-button').addEventListener('click', function () {
-            Kakao.Auth.loginForm({
-                success: function (response) {
-                    // 카카오 로그인 성공 시 사용자 정보 가져오기
-                    Kakao.API.request({
-                        url: '/v2/user/me',
-                        success: function (response) {
-                            var userName = response.properties.nickname;
-
-                            // 사용자 정보 출력
-                            document.getElementById('kakao-user-name').innerHTML = userName+'님 환영합니다.' ;
-
-                            document.getElementById('kakao-login-button').style.display = 'none';
-                            document.getElementById('kakao-logout-button').style.display = 'block';
-                            // 사용자 정보 콘솔에 출력
-                            console.log('사용자 정보:', response);
-
-                            // 성공 시 콘솔에 메시지 출력
-                            console.log('카카오 로그인 성공');
-                            
-                        },
-                        fail: function (error) {
-                            console.log(error);
-                        }
-                    });
-                },
-                fail: function (error) {
-                    console.log(error);
-                }
-            });
-        });
-
-        // 카카오 로그아웃 버튼 클릭 시 실행할 함수
-        document.getElementById('kakao-logout-button').addEventListener('click', function () {
-            // 카카오 로그아웃 처리
-            Kakao.Auth.logout(function () {
-                document.getElementById('kakao-user-name').innerHTML = '';
-                document.getElementById('kakao-login-button').style.display = 'block';
-                document.getElementById('kakao-logout-button').style.display = 'none';
-            });
-        });
-    </script>
   <!-- regist(회원가입) -->
       <div class="regist">
         <div class="regist1">
@@ -294,7 +245,7 @@
           </div>
           <!-- banner -->
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
-            <a target="_blank" href="popup_banner.jsp">
+            <a target="_blank" href="#">
               <img src="./images/working.png" width= "200" height="300" border="1">
             </a>
           </div>
@@ -302,81 +253,7 @@
       </div>
     </div>
     
-    <div class="site-section block-3 site-blocks-2 bg-light">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 site-section-heading text-center pt-4">
-            <h2>Featured Products</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="nonloop-block-3 owl-carousel">
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Tank Top</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_2.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Polo Shirt</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/cloth_3.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">T-Shirt Mockup</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3><a href="#">Corater</a></h3>
-                    <p class="mb-0">Finding perfect products</p>
-                    <p class="text-primary font-weight-bold">$50</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <div class="site-section block-8">
       <div class="container">
