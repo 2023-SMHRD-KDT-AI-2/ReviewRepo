@@ -21,3 +21,21 @@
     color: aliceblue;
   }
   
+  #gender1, #gender2, #footFlat, #footFlat1, #footHeight, #footHeight1, #footHeight2, #footWidth, #footWidth1, #footWidth2 {
+	  width: auto;
+	    
+	  }
+	  
+.form-check-input{
+	position: static !important;
+	margin-left: 0px;
+}
+
+.form-check.col-6-1, .footFlatClass, .footHeightClass, .footWidthClass {
+	display: inline;
+}
+
+.foot_margin, .gender_margin {
+	margin-top: 5px;
+	
+}

@@ -46,7 +46,7 @@
   <!-- login(로그인) -->
       <zdiv class="loginBg">
           <div class="login-form">
-              <form>
+              <form class="loginForm">
                   <h3>로그인</h3>
                   <input type="text" name="email" class="text-field" placeholder="아이디" style="border: 1px solid;">
                   <input type="password" name="password" class="text-field" placeholder="비밀번호" style="border: 1px solid;">
@@ -57,9 +57,6 @@
                   <a href="#" class="join">회원가입</a>&nbsp;&nbsp;
                   <a href="#">비밀번호를 잊어버리셨나요?</a>
                </div>
-               
-               
-               
                
                <!-- 카카오 로그아웃 버튼 -->
     			
@@ -117,7 +114,7 @@
         });
     </script>
   <!-- regist(회원가입) -->
-  <form id="regForm" action="#">
+  <form id="regForm" action="JoinService">
     <h1>회원가입</h1>
     <!-- One "tab" for each step in the form: -->
       <div class="tab">
@@ -134,14 +131,22 @@
             <label for="inputName4" class="form-label">이름</label>
             <input type="text" class="form-control" name="user_name" id="inputName4" oninput="this.className = ''">
           </div>
-          <div class="form-check col-6">
-            <input class="form-check-input" type="radio" name="gender" id=" gender1" oninput="this.className = ''" value="남자">
-            <label class="form-check-label" for="gender1">남성</label>
+          <div class="gender_margin">
+          	<div class="form-check col-6-1">
+	            <label class="form-check-label" for="gender">성별</label>
+	            <input class="form-check-input" type="radio" name="user_gender" id="gender1" oninput="this.className = ''" value="남자">
+	            <label class="form-check-label" for="gender1">남성</label>
+	          </div>
+	          <div class="form-check col-6-1">
+	            <input class="form-check-input" type="radio" name="user_gender" id="gender2" oninput="this.className = ''" value="여자">
+	            <label class="form-check-label" for="gender2">여성</label>
+	          </div>
           </div>
-          <div class="form-check col-6">
-            <input class="form-check-input" type="radio" name="gender" id="gender2" oninput="this.className = ''" value="여자">
-            <label class="form-check-label" for="gender2">여성</label>
+          <div class="col-12">
+            <label for="Age" class="form-label">나이</label>
+            <input type="text" class="form-control" name="age" id="Age" oninput="this.className = ''">
           </div>
+          
           <div class="col-md-12">
             <label for="inputAddress" class="form-label">우편번호</label>
             <input type="text" id="zip-code" class="form-control" oninput="this.className = ''">
@@ -173,25 +178,53 @@
           <div>
             <div>
               <label for="footSize" class="form-label">발 사이즈</label>
-              <input type="text" id="footSize" name="footSize" class="form-input foot foot_size" oninput="this.className = ''">
+              <input type="text" id="footSize" name="footSize" class="form-check-input foot foot_size" oninput="this.className = ''">
             </div>
-            <div>
-              <label for="footWidth" class="form-label">발 볼 넓이</label>
-              <input type="text" id="footWidth" name="footWidth" class="form-input foot foot_width" oninput="this.className = ''">
+            
+            <div class="foot_margin">
+	              <label for="footWidth" class="form-label">발 볼 넓이</label>
+            	<div class="col-6 footWidthClass">
+	              <label for="footWidth" class="form-label">넓음</label>
+	              <input type="radio" id="footWidth" name="footWidth" class="form-check-input foot foot_width" oninput="this.className = ''">
+	            </div>
+	            <div class="col-6 footWidthClass">
+	              <label for="footWidth" class="form-label">보통</label>
+	              <input type="radio" id="footWidth1" name="footWidth" class="form-check-input foot foot_width" oninput="this.className = ''">
+	            </div>
+	            <div class="col-6 footWidthClass">
+	              <label for="footWidth" class="form-label">좁음</label>
+	              <input type="radio" id="footWidth2" name="footWidth" class="form-check-input foot foot_width" oninput="this.className = ''">
+	            </div>
             </div>
-            <div>
-              <label for="footHeight" class="form-label">발 등 높이</label>
-              <input id="footHeight" name="footHeight" class="form-input" oninput="this.className = ''" />
+            
+            <div class="foot_margin">
+	              <label for="footHeight" class="form-check-label">발 등 높이</label>
+            	<div class="col-6 footHeightClass">
+	              <label for="footHeight" class="form-check-label">높음</label>
+	              <input type="radio" id="footHeight" name="footHeight"  value="높음" class="form-check-input" oninput="this.className = ''" />
+	            </div>
+	          	<div class="col-6 footHeightClass">
+	              <label for="footFlat1" class="form-check-label">보통</label>
+	              <input type="radio" id="footHeight1" name="footFlat" value="보통" class="form-check-input" oninput="this.className = ''" />
+	            </div>
+	            <div class="col-6 footHeightClass">
+	              <label for="footFlat1" class="form-check-label">낮음</label>
+	              <input type="radio" id="footHeight2" name="footFlat" value="낮음" class="form-check-input" oninput="this.className = ''" />
+	            </div>
             </div>
-            <div class="col-6">
-              <input type="radio" id="footFlat" name="footFlat"  value="유" class="form-check-input" oninput="this.className = ''" />
-              <label for="footFlat" class="form-check-label">유</label>
+            
+            <div class="foot_margin">
+	              <label for="footFlat" class="form-check-label foot_flat">평발</label>
+            	<div class="col-6 footFlatClass">
+	              <label for="footFlat" class="form-check-label">유</label>
+	              <input type="radio" id="footFlat" name="footFlat"  value="유" class="form-check-input" oninput="this.className = ''" />
+	            </div>
+	            <div class="col-6 footFlatClass">
+	              <label for="footFlat1" class="form-check-label">무</label>
+	              <input type="radio" id="footFlat1" name="footFlat" value="무" class="form-check-input" oninput="this.className = ''" />
+	            </div>
+	          </div>
             </div>
-            <div class="col-6">
-              <input type="radio" id="footFlat1" name="footFlat" value="무" class="form-check-input" oninput="this.className = ''" />
-              <label for="footFlat1" class="form-check-label">무</label>
-            </div>
-          </div>
       
           <div>
             <label for="ice-cream-choice">선호 하는 신발 종류</label>
@@ -199,7 +232,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
   
       <div class="tab">
         <div>

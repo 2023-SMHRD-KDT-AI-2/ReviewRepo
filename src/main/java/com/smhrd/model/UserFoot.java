@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Getter
 public class UserFoot {
 	private String user_id;
-	private String foot_size;
+	private int foot_size;
 	private String foot_width;
 	private String foot_height;
 	private String foot_flat;
