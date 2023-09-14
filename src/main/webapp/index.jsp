@@ -226,8 +226,17 @@
       <span class="step"></span>
     </div>
   </form>
+  
+  <!-- banner -->
+          <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0 banner">
+            <a target="_blank" href="popup_banner.jsp">
+              <img src="./images/working.png" width= "200" height="300" border="1">
+            </a>
+          </div>
 
   <!-- header -->
+  
+  
   <div class="site-wrap">
     <header class="site-navbar" role="banner">
       <div class="site-navbar-top">
@@ -355,19 +364,6 @@
     </header>
 
     <div class="site-blocks-cover" style="background-image: url(images/working.png);"  data-aos="fade">
-      <div class="container">
-        <div class="row align-items-start align-items-md-center justify-content-end">
-          <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-            <h1 class="mb-2">여기 있어요</h1>
-            <div class="intro-text text-center text-md-left">
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla. </p>
-              <p>
-                <a href="#" class="btn btn-sm btn-primary">Shop Now</a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     
