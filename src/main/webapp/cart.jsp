@@ -405,6 +405,7 @@
 		
 		function updatePrices() {
 			for (let i = 0; i < quantity.length; i++) {
+				product_price[i].textContent=Number(product_price[i].textContent.replace(/,/g,''))
 				product_price[i].textContent=Number(product_price[i].textContent).toLocaleString('ko-KR')
 				before_sale[i].textContent = (Number(product_price[i].textContent.replace(/,/g,'')) * Number(quantity[i].value)).toLocaleString('ko-KR');
 				last_price[i].textContent = (Number(before_sale[i].textContent.replace(/,/g, '')) * 0.9).toLocaleString('ko-KR');
