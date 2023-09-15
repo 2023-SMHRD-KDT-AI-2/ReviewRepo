@@ -143,7 +143,8 @@ a {
     border-bottom: 1px solid #f3f3f4;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom: 0px; }
+    margin-bottom: 0px; 
+    text-decoration: none;}
     @media (min-width: 768px) {
       .site-navbar .site-navbar-top {
         padding-top: 40px;
@@ -451,7 +452,7 @@ a {
   background-position: center center; }
   .site-blocks-cover, .site-blocks-cover .row {
     min-height: 400px;
-    height: calc(70vh - 150px); 
+    height: calc(85vh - 100px); 
   }
   .site-blocks-cover h1 {
     font-size: 30px;
@@ -788,4 +789,7 @@ a {
     text-align: center;
   }
 
-  
+   /* 취소선 긋기 */
+  .my-line-through {
+     text-decoration-line: line-through;
+  }

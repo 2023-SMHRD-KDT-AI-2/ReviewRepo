@@ -205,14 +205,9 @@
 								<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
 									<div class="block-4 text-center border" style="height: 400px;">
 										<figure class="block-4-image col-md-12">
-<<<<<<< HEAD
-											<a href="DetailService?selectedPro_id=${item.pro_id}"><img src="${item.img1_path}"
-												alt="Image placeholder" class="img-fluid"></a>
-=======
 											<a href="DetailService?selectedPro_id=${item.pro_id}"><img
 												src="${item.img1_path}" alt="Image placeholder"
 												class="img-fluid" style="height: 220px;"></a>
->>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo.git
 										</figure>
 										<div class="block-4-text p-4">
 											<h3>

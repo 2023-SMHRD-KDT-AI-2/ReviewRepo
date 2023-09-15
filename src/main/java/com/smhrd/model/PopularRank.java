@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 public class PopularRank {
 
 	private String pro_name;
+	private String pro_category;
+	private int pro_price;
+	private int pro_cost;
 	private String img_id;
 	private String pro_id;
 	private String img1_path;
