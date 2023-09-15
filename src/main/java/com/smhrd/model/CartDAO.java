@@ -9,7 +9,7 @@ import com.smhrd.database.SqlSessionManager;
 
 public class CartDAO {
 
-	
+	Cart cart = new Cart();
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	ProductInfo proinfo = new ProductInfo();
 	// 장바구니 추가상품 불러오기 기능
@@ -19,8 +19,9 @@ public class CartDAO {
 	    ArrayList<Cart> cartlist = new ArrayList<>();
 	    
 	        SqlSession sqlSession = sqlSessionFactory.openSession(true);
+	        System.out.println("DAO 겟유저카트리스트"+cartlist);
 	        cartlist = (ArrayList)sqlSession.selectList("userCartList", userId);
-	        System.out.println(cartlist);
+	        System.out.println("DAO 겟유저카트리스트2"+cartlist);
 	        
 	        sqlSession.close();
 	    return cartlist;
@@ -56,8 +57,8 @@ public class CartDAO {
 		return cnt;
 	}
 	
-	// 카트 수량 리턴하기
 	public int HowManyProductsInTheCart(String userid) {
-		return getUserCartList("TEST1").size();
+		
+		return getUserCartList(userid).size();
 	}
 }

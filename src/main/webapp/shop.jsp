@@ -31,7 +31,12 @@
 
 </head>
 <body>
-
+	<%
+	String user_id = null;
+	if (session.getAttribute("user_id") != null) {
+		user_id = (String) session.getAttribute("user_id");
+	}
+	%>
 	<div class="site-wrap">
 		<header class="site-navbar" role="banner">
 			<div class="site-navbar-top">
@@ -39,24 +44,43 @@
 					<div class="row align-items-center">
 
 						<div class="col-6 col-md-4 order-2 order-md-1 text-center">
-	              <div class="site-logo">
-	                <a href="index.jsp" class="js-logo-clone">In Foot <br> Out Foot</a>
-	              </div>
-	            </div>
-	
-	            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
-	              <form action="productSearch" class="site-block-top-search">
-	                <span class="icon icon-search2"></span>
-	                <!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
-	                <input type="text" class="form-control border-0" name="search" placeholder="Search">
-	              </form>
-	            </div>
+							<div class="site-logo">
+								<a href="index.jsp" class="js-logo-clone">In Foot <br>
+									Out Foot
+								</a>
+							</div>
+						</div>
+
+						<div
+							class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 site-search-icon text-left">
+							<form action="productSearch" class="site-block-top-search">
+
+
+								<span class="icon icon-search2"></span>
+								<!-- text부분을 데이터베이스에 가져와서 비교작업!! -->
+								<input type="text" class="form-control border-0" name="search"
+									placeholder="Search">
+							</form>
+						</div>
 
 						<div class="col-6 col-md-4 order-3 order-md-3 text-right">
 							<div class="site-top-icons">
 								<ul>
+									<%
+									if (user_id == null) {
+									%>
 									<li><a href="#"><span class="icon icon-person"></span></a></li>
-									<!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
+									<%
+									} else if (user_id != null) {
+									%>
+									<li><span
+										style="color: black; text-decoration: underline; text-underline-position: under;"><strong>${info.user_id}</strong></span>님
+										환영합니다</li>
+									<li><a href="LogoutService"><span
+											class="icon icon-person"></span></a></li>
+									<%
+									}
+									%>
 									<li><a href="cart.jsp" class="site-cart"> <span
 											class="icon icon-shopping_cart"></span> <span class="count">2</span>
 									</a></li>
@@ -177,12 +201,18 @@
 
 						<div class="row mb-5">
 
-									<c:forEach var="item" items="${list}" varStatus="status">
-							<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-								<div class="block-4 text-center border">
+							<c:forEach var="item" items="${list}" varStatus="status">
+								<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+									<div class="block-4 text-center border" style="height: 400px;">
 										<figure class="block-4-image col-md-12">
+<<<<<<< HEAD
 											<a href="DetailService?selectedPro_id=${item.pro_id}"><img src="${item.img1_path}"
 												alt="Image placeholder" class="img-fluid"></a>
+=======
+											<a href="DetailService?selectedPro_id=${item.pro_id}"><img
+												src="${item.img1_path}" alt="Image placeholder"
+												class="img-fluid" style="height: 220px;"></a>
+>>>>>>> branch 'master' of https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo.git
 										</figure>
 										<div class="block-4-text p-4">
 											<h3>
@@ -192,9 +222,9 @@
 											<p class="text-primary font-weight-bold">${item.pro_price}</p>
 
 										</div>
+									</div>
 								</div>
-							</div>
-									</c:forEach>
+							</c:forEach>
 
 
 

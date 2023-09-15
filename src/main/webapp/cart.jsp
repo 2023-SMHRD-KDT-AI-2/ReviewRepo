@@ -1,28 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Shoppers &mdash; Colorlib e-Commerce Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<title>Shoppers &mdash; Colorlib e-Commerce Template</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+<link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/magnific-popup.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<link rel="stylesheet" href="css/owl.carousel.min.css">
+<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 
-    <link rel="stylesheet" href="css/aos.css">
+<link rel="stylesheet" href="css/aos.css">
 
-    <link rel="stylesheet" href="css/style.css">
-    
-    <style>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
 .payment {
 	position: relative;
 	right: 50;
@@ -34,9 +36,10 @@
 	color: gray;
 }
 </style>
-    
-  </head>
-  <body>
+
+</head>
+<body>
+
 	<div class="site-wrap">
 		<header class="site-navbar" role="banner">
 			<div class="site-navbar-top">
@@ -61,8 +64,28 @@
 						<div class="col-6 col-md-4 order-3 order-md-3 text-right">
 							<div class="site-top-icons">
 								<ul>
+									<%
+									String user_id=(String)session.getAttribute("user_id");
+									String userID=(String)request.getAttribute("userid");
+									if (session.getAttribute("user_id") != null) {
+										user_id = (String) session.getAttribute("user_id");
+									}
+									%>
+									<%
+									if (user_id == null) {
+									%>
 									<li><a href="#"><span class="icon icon-person"></span></a></li>
-									<!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
+									<%
+									} else if (user_id != null) {
+									%>
+									<li><span
+										style="color: black; text-decoration: underline; text-underline-position: under;"><strong>${info.user_id}</strong></span>님
+										환영합니다</li>
+									<li><a href="LogoutService"><span
+											class="icon icon-person"></span></a></li>
+									<%
+									}
+									%>
 									<li><a href="CartPage" class="site-cart"> <span
 											class="icon icon-shopping_cart"></span> <span class="count">2</span>
 									</a></li>
@@ -80,7 +103,7 @@
 				role="navigation">
 				<div class="container">
 					<ul class="site-menu js-clone-nav d-none d-md-block">
-						<li class="has-children"><a href="index.jsp">HOME</a>
+						<li class="has-children"><a href="index.jsp">Home</a>
 							<ul class="dropdown">
 								<li><a href="#">Menu One</a></li>
 								<li><a href="#">Menu Two</a></li>
@@ -92,16 +115,16 @@
 										<li><a href="#">Menu Three</a></li>
 									</ul></li>
 							</ul></li>
-						<li class="has-children"><a href="about.html">About</a>
+						<li class="has-children"><a href="about.jsp">About</a>
 							<ul class="dropdown">
 								<li><a href="#">Menu One</a></li>
 								<li><a href="#">Menu Two</a></li>
 								<li><a href="#">Menu Three</a></li>
 							</ul></li>
-						<li><a href="shop.html">Shop</a></li>
+						<li><a href="shop.jsp">Shop</a></li>
 						<li><a href="#">Catalogue</a></li>
 						<li><a href="#">New Arrivals</a></li>
-						<li><a href="contact.html">Contact</a></li>
+						<li><a href="contact.jsp">Contact</a></li>
 					</ul>
 				</div>
 			</nav>

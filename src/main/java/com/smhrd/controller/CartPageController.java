@@ -30,9 +30,11 @@ public class CartPageController extends HttpServlet {
 		Cart cart = new Cart();
 		ProductInfo productNameAndPriceSelectOne = new ProductInfo();
 		ArrayList<Cart> userCartList = new ArrayList<Cart>();
-		userCartList = dao.getUserCartList("TEST1");		
+		String userid=request.getParameter("userid");
+		System.out.println(userid);
+		userCartList = dao.getUserCartList(userid);		
 
-		
+		System.out.println(userCartList.size());
 		
 		ArrayList<ProductInfo> productNameAndPrice= new ArrayList<ProductInfo>();
 
@@ -57,7 +59,7 @@ public class CartPageController extends HttpServlet {
 			
 		}
 		request.setAttribute("productNameAndPrice", productNameAndPrice);
-		
+		request.setAttribute("userid", userid);
 		RequestDispatcher rd = request.getRequestDispatcher("cart.jsp");
 		rd.forward(request, response);
 		
