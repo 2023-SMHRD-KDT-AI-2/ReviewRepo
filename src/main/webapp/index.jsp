@@ -1,5 +1,5 @@
 
-    <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.model.*"%>
 <%@ page import = "java.util.ArrayList" %>
@@ -29,6 +29,12 @@
     <link rel="stylesheet" href="css/button.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9dd5ee0fd1.js" crossorigin="anonymous"></script>
+      <style>
+    .before-sale {
+   text-decoration: line-through;
+   color: gray;
+}
+    </style>
   </head>
   <body>
    <!-- popup(팝업창) -->
@@ -423,6 +429,14 @@
       </div>
     </div> -->
     
+    
+     <%
+				PopularRankDAO dao = new PopularRankDAO();
+			
+				ArrayList<PopularRank> ranklist = new ArrayList<>();
+				ranklist = dao.list();
+				session.setAttribute("list", ranklist);
+			%>
     <div class="site-section block-3 site-blocks-2 bg-light">
       <div class="container">
         <div class="row justify-content-center">
@@ -433,19 +447,23 @@
         <div class="row">
           <div class="col-md-12">
             <div class="nonloop-block-3 owl-carousel">
+            <c:forEach var="ranklist" items="${list}" varStatus="status">
               <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
-                    <img src="images/cloth_1.jpg" alt="Image placeholder" class="img-fluid">
+                    <img src="${ranklist.img1_path}" alt="Image placeholder" class="img-fluid">
                   </figure>
                   <div class="block-4-text p-4">
-                    <h3><a href="#">Tank Top</a></h3>
-                    <p class="mb-0">Finding perfect t-shirt</p>
-                    <p class="text-primary font-weight-bold">$50</p>
+                    <h3><a href="#">${ranklist.pro_name}</a></h3>
+                    <p class="before-sale">${ranklist.pro_price}</p>
+                    <p class="text-primary font-weight-bold">${ranklist.pro_cost}</p>
+                     <h3 >${ranklist.pro_category}</h3>
                   </div>
                 </div>
               </div>
-              <div class="item">
+                       </c:forEach>
+              
+             <!-- <div class="item">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img src="images/shoe_1.jpg" alt="Image placeholder" class="img-fluid">
@@ -492,7 +510,7 @@
                     <p class="text-primary font-weight-bold">$50</p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             </a>
           </div>

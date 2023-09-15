@@ -788,4 +788,7 @@ a {
     text-align: center;
   }
 
-  
+   /* 취소선 긋기 */
+  .my-line-through {
+     text-decoration-line: line-through;
+  }
