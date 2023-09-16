@@ -1,5 +1,7 @@
+<%@page import="com.smhrd.model.CartDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -314,7 +316,7 @@
 
 	<!-- banner -->
 	<div class="banner">
-		<a target="_blank" href="popup_banner.jsp"> <img
+		<a target="_blank" href="BannerTest.jsp"> <img
 			src="./images/working.png" width="200" height="300" border="1">
 		</a>
 	</div>
@@ -349,16 +351,36 @@
 						<div class="col-6 col-md-4 order-3 order-md-3 text-right">
 							<div class="site-top-icons">
 								<ul>
-									<!-- 사용자 이름 출력 -->
-									<li><div id="kakao-user-name"></div></li>
-									<li><a href="#"><span class="icon icon-person"></span></a></li>
-									<!-- <li><a href="#"><span class="icon icon-heart-o"></span></a></li> -->
-									<li><a href="CartPage" class="site-cart"> <span
-											class="icon icon-shopping_cart"></span> <span class="count">2</span>
-									</a></li>
-									<li class="d-inline-block d-md-none ml-md-0"><a href="#"
-										class="site-menu-toggle js-menu-toggle"><span
-											class="icon-menu"></span></a></li>
+									<%
+                	String user_id =(String) session.getAttribute("user_id");
+                	if (session.getAttribute("user_id") != null) {
+                		user_id = (String)session.getAttribute("user_id");
+                	}
+                
+                %>
+                <% if (user_id == null){%>
+                  <!-- 사용자 이름 출력 -->
+    			  <li><div id = "user_name"></div></li>
+                  <li><a href="#"><span class="icon icon-person"></span></a></li>
+                  
+                  <% } else if (user_id != null){%>
+                  <li> <span style="color: black; text-decoration: underline; text-underline-position:under;"><strong>${info.user_id}</strong></span>님 환영합니다</li>
+                  <li><a href="LogoutService"><span class="icon icon-person"></span></a></li>
+                  
+                  <li>
+                 <%  System.out.println(user_id);%>
+                    <a href="CartPage?userid=${user_id}" class="site-cart">
+                      <span class="icon icon-shopping_cart"></span>
+                      
+                     <% CartDAO cartDao= new CartDAO();
+                     System.out.println(user_id);
+                     
+                      int countCart=cartDao.HowManyProductsInTheCart(user_id);%>
+                      <span class="count"><%=countCart%></span>
+                    </a>
+                  </li> 
+                  <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                  <%} %>
 								</ul>
 							</div>
 						</div>
