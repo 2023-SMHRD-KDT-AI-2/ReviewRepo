@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.model.ProductDiscountMapper">
+<select id="discountlist" resultType="com.smhrd.model.ProductDiscount">
+SELECT A.PRO_ID,A.PRO_NAME,A.PRO_CATEGORY,A.PRO_PRICE,B.DISCOUNT_PERCENTAGE,C.IMG1_PATH
+FROM PRODUCT A
+INNER JOIN PRODUCT_DIS B ON A.PRO_ID = B.PRO_ID
+INNER JOIN PRODUCT_IMG C ON A.PRO_ID = C.PRO_ID
+</select>
+
+
+
+
+</mapper>
