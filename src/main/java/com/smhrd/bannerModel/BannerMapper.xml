@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.bannerModel.BannerMapper">
+
+	<select id="bannerRecommendList" parameterType="com.smhrd.bannerModel.BannerResult" resultType="com.smhrd.bannerModel.BannerRecommendList">
+	select p.pro_name as productName, p.pro_price as productPrice, pi.img1_path as img1Path
+	From pro_function pf
+	Join product p on pf.pro_id=p.pro_id
+	join product_img pi on p.pro_id = pi.pro_id
+	where pf.f_wind=#{f_wind}
+	and pf.f_durability=#{f_durability}
+	and pf.f_slip = #{f_slip}
+	and pf.f_water= #{f_water}
+	and pf.f_inheight=#{f_inheight}
+	and pf.f_inwidth=#{f_inwidth}
+	</select>
+	
+	<!-- 
+	SELECT p.PRO_NAME AS productName, p.PRO_PRICE AS productPrice, pi.IMG1_path AS imgPath
+	FROM pro_function pf
+	JOIN product p ON pf.pro_id = p.pro_id
+	JOIN product_img pi ON p.pro_id = pi.pro_id
+	WHERE pf.f_wind = #{f_wind}
+	AND pf.f_durability = #{f_durability}
+	AND pf.f_slip = #{f_slip}
+	AND pf.f_cushion = #{f_cushion}
+	AND pf.f_water = #{f_water}
+	AND pf.f_inheight = #{f_inheight}
+	AND pf.f_inwidth = #{f_inwidth} 
+	 -->
+
+
+
+</mapper>
