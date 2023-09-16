@@ -30,6 +30,7 @@
 		<mapper resource="com/smhrd/bannerModel/BannerMapper.xml" />
 		<mapper resource="com/smhrd/model/ProductMapper.xml" />
 		<mapper resource="com/smhrd/model/PopularRankMapper.xml" />
+		<mapper resource="com/smhrd/model/ProductDiscountMapper.xml" />
 	</mappers>
 	
 </configuration>

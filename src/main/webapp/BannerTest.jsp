@@ -12,10 +12,10 @@
   <meta name="author" content="Dain Kim">
 
   <meta name="keywords" content="이미지 테스트, 나를 알아보는 10가지 질문, 10-things-test, 3분이미지테스트, 이미지테스트">
-  <meta name="description" content="이미지 테스트: 나를 알아보는 10가지 질문">
+  <meta name="description" content="신발추천 테스트: 나는 어떤 기능이 필요할까">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="나를 알아보는 10가지 질문">
+  <meta property="og:title" content="신발추천 테스트: 나는 어떤 기능이 필요할까">
   <meta property="og:description" content="사람들이 보는 나는 어떤 이미지일까?">
   <meta property="og:image" content="images/og-logo.jpg">
   <meta property="og:url" content="https://dev-dain.github.io/10-things-test/">
@@ -62,15 +62,15 @@
       </div>
       <hr class="w-line">
       <p class="w-line">
-        <span id="p-tit">이 테스트로 당신은...</span><br>
-        당신이 하는 활동에 적절한 신발을 추천 받을 수 있습니다.<br>
-        현대인들은 각자의 기호에 맞는 다양한 활동을 즐기고 있습니다.
-        역동적인 움직임에 해당하는 신발을 신는 것은 매우 중요할 것입니다.
-        테스트 결과를 통해 신발을 추천받고 최적의 활동 환경을 조성해보세요!
+        <span id="p-tit">평소에 즐기는 활동이 있나요?</span><br>
+        모든 활동에 신발이라는 장비는 꼭 필요합니다.<br>
+        자신의 움직임에 맞는 신발을 신는 것은 매우 중요할 것입니다.<br>
+        하지만 생활습관과 발의 모양에 맞지 않아 불편함을 느끼기도 합니다.<br>
+        이 테스트를 통해 신발을 추천받고 최적의 활동 환경을 조성해보세요!
       </p>
       <hr class="w-line">
       <div id="name-input">
-        <input type="text" placeholder="이름" autofocus>
+        <input type="text" placeholder="이름">
       </div>
       <p class="check-name warning"></p>
       <div class="start-wrap">
@@ -83,7 +83,7 @@
         <div class="status"></div>
       </div>
       <div class="q box"></div>
-      <img class="q-img" style="display:none;" alt="질문 관련 이미지">
+      <img class="q-img" style="display:none; height:300px;" alt="질문 관련 이미지">
       <div class="answer"></div>
     </section>
     <section id="calc">

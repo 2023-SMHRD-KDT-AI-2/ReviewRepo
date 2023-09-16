@@ -56,3 +56,11 @@ body {
     min-width: 55%;
   }
 }
+
+#qna .q-img {
+   display: none;
+   margin-left: auto;
+   margin-right: auto;
+   width: 600px;
+   height: 600px;
+}

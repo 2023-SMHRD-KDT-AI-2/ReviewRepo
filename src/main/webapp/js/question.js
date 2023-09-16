@@ -2,56 +2,55 @@
 
 const qnaList = [
   {
-    img: 'images/night.png',
-    q: '1. 통기성 원하십니까?',
+    img: 'images/shoessmell.jpg',
+    q: '1. 발에 차는 습기 때문에 자주 불편함을 느끼고 신발에서 나는 냄새가 난다.',
     a: [
       { answer: 'a. 네', score: 1 },
       { answer: 'b. 아니요', score: 0 },
     ]
   },
   {
-    img: 'images/clock.png',
-    q: '2. 내구성은 좋아야 될까요(거친 지형)?',
+    img: 'images/gravelpath.png',
+    q: '2. 주로 포장된 도로보단 거친 자갈길로 통행한다.',
     a: [
       { answer: 'a. 네', score: 1 },
       { answer: 'b. 아니요', score: 0 },
     ]
   },
   {
-    q: '3. 미끄럼 방지가 필요합니까?',
+	img: 'images/slide.jpg',  
+    q: '3. 미끄러운 길을 걸을 때 대처하기 어렵다.',
     a: [
       { answer: 'a. 네', score: 1 },
       { answer: 'b. 아니요', score: 0 },
     ]
   },
-  {
-    q: '4. 쿠션기능이 필요합니까?',
+  { img: 'images/cushion.jpg',
+    q: '4. 딱딱한 신발보단 푹신한 것이 낫다.',
     a: [
       { answer: 'a. 네', score: 1 },
       { answer: 'b. 아니요', score: 0 },
     ]
   },
-  {
-    q: '5. 방수기능이 필요합니까?',
+  { img: 'images/waterproof.png',
+    q: '5. 어느 정도 물을 막아주는 신발이 좋다.',
     a: [
       { answer: 'a. 네', score: 1 },
       { answer: 'b. 아니요', score: 0 },
     ]
   },
-  {
-    q: '6. 발볼은 넓은편이에요?',
+  { img: 'images/duckfoot.jpeg',
+    q: '6. 신발 발볼이 좁아 불편한 적이 많다.',
     a: [
-      { answer: 'a. 넓음', score: 1 },
-      { answer: 'b. 좁음', score: 0 },
-      { answer: 'c. 모르겠다', score: 2 }
+      { answer: 'a. 네', score: 1 },
+      { answer: 'b. 아니요', score: 0 },
     ]
   },
-  {
-    q: '7. 발등은 높은 편이에요?',
+  { img: 'images/instep.jpg',
+    q: '7. 신발 발등은 높았으면 좋겠다.',
     a: [
-      { answer: 'a. 높음', score: 1 },
-      { answer: 'b. 낮음', score: 0 },
-      { answer: 'c. 모르겠다', score: 4 }
+      { answer: 'a. 네', score: 1 },
+      { answer: 'b. 아니요', score: 0 },
     ]
   }
 ]

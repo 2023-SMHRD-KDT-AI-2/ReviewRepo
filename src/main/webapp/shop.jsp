@@ -5,6 +5,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +30,22 @@
 <link rel="stylesheet" href="css/aos.css">
 
 <link rel="stylesheet" href="css/style.css">
+
+<style>
+ .before-sale{
+   text-decoration: line-through;
+   color: gray;
+}
+
+.prod-price .total-price {
+    font-size: 20px;
+    line-height: 21px;
+}
+.prod-price .major-price-coupon {
+    color: #cb1400;
+}
+</style>
+
 
 </head>
 <body>
@@ -81,7 +99,7 @@
 									<%
 									}
 									%>
-									<li><a href="cart.jsp" class="site-cart"> <span
+									<li><a href="CartPage" class="site-cart"> <span
 											class="icon icon-shopping_cart"></span> <span class="count">2</span>
 									</a></li>
 									<li class="d-inline-block d-md-none ml-md-0"><a href="#"
@@ -197,24 +215,84 @@
 						//request.getAttribute("shoes");
 
 						//session.setAttribute("list", list);
+						
+						
 						%>
 
 						<div class="row mb-5">
 
 							<c:forEach var="item" items="${list}" varStatus="status">
 								<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
+    <div class="block-4 text-center border" style="height: 400px;">
+        <figure class="block-4-image col-md-12">
+            <a href="DetailService?selectedPro_id=${item.pro_id}"><img
+                src="${item.img1_path}" alt="Image placeholder"
+                class="img-fluid" style="height: 220px;"></a>
+        </figure>
+        <div class="block-4-text p-4">
+            <h3>
+                <a href="shop-single.jsp">${item.pro_name}</a>
+            </h3>
+            <p class="mb-0">${item.pro_category}</p>
+            <p class="font-weight-bold prod-price major-price-coupon" style="font-size: 20px; line-height: 21px; color: #cb1400;">
+                <fmt:formatNumber value="${item.pro_price}" pattern="#,###" />
+            </p>
+        </div>
+    </div>
+</div>
+							</c:forEach>
+
+
+
+						</div>
+
+
+						<% 
+						ProductDiscountDAO dao = new ProductDiscountDAO();
+						ArrayList<ProductDiscount> dlist =new ArrayList<>();
+						dlist = dao.discountlist();
+						session.setAttribute("discountlist", dlist);
+						
+						
+						
+						%>
+						<div class="row mb-5">
+
+							<c:forEach var="discount" items="${discountlist}" varStatus="anotherstatus">
+								<div class="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
 									<div class="block-4 text-center border" style="height: 400px;">
 										<figure class="block-4-image col-md-12">
-											<a href="DetailService?selectedPro_id=${item.pro_id}"><img
-												src="${item.img1_path}" alt="Image placeholder"
+											<a href="DetailService?selectedPro_id=${discount.pro_id}"><img
+												src="${discount.img1_path}" alt="Image placeholder"
 												class="img-fluid" style="height: 220px;"></a>
 										</figure>
 										<div class="block-4-text p-4">
 											<h3>
-												<a href="shop-single.jsp">${item.pro_name}</a>
+												<a href="shop-single.jsp">${discount.pro_name}</a>
 											</h3>
-											<p class="mb-0">${item.pro_category}</p>
-											<p class="text-primary font-weight-bold">${item.pro_price}</p>
+											<p class="mb-0">${discount.pro_category}</p>
+											<%-- discount.pro_price 값 가져오기 --%>
+<c:set var="proPrice" value="${discount.pro_price}" />
+
+<%-- formattedPrice 변수에 값을 설정하고 3단위로 쉼표로 구분 --%>
+<fmt:formatNumber var="formattedPrice" value="${proPrice}" type="number" pattern="#,###" />
+
+<%-- discount.discount_percentage 값을 100에서 뺀 값으로 계산 --%>
+<c:set var="discountPercentage" value="${100 - discount.discount_percentage}" />
+
+<p class="font-weight-bold prod-price major-price-coupon">
+    ${discountPercentage}% 할인 &nbsp; <span class="before-sale">${formattedPrice}</span>
+</p>
+										
+										<%-- discount.pro_price와 discount.discount_percentage를 곱하고 100으로 나눈 값을 계산하여 formattedPrice 변수에 저장 --%>
+<c:set var="formattedPrice" value="${(discount.pro_price * discount.discount_percentage) / 100}" />
+
+<%-- formattedPrice 값을 3단위로 쉼표로 구분하여 출력 --%>
+<fmt:formatNumber var="formattedPriceFormatted" value="${formattedPrice}" pattern="#,###" />
+
+<p class="font-weight-bold prod-price major-price-coupon" style="font-size: 20px; line-height: 21px; color: #cb1400;">
+    ${formattedPriceFormatted}
+</p>
 
 										</div>
 									</div>
@@ -224,9 +302,6 @@
 
 
 						</div>
-
-
-
 
 
 
