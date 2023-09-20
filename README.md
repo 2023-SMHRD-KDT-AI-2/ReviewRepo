@@ -1,5 +1,5 @@
 # ReviewRepo
-In Foot Out Foot
+팀명 및 사이트 명 :In Foot Out Foot
 ![ShoesMaker](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/a7bb3f44-cfb1-47b6-b305-071bac719cd4)
 
 <br>
