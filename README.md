@@ -4,18 +4,24 @@
 
 <br>
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/25995055/178401150-861f0e93-0f40-4fae-98c1-2099bf513c8d.png)
+### 사용자의 운동환경 및 경험을 고려한 신발 추천 서비스(리뷰 데이터를 수집하여 신발 특성 파악)
+#### 상품 추천목록 예시
 <br>
+![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/ac68f372-b36f-4d57-8eb4-5fe2c55dc304)
+#### 기술 스택
+![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/401eb413-203d-4af5-8ab8-ff12d6e65635)
+
+
 
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="https://item.kakaocdn.net/do/fd49574de6581aa2a91d82ff6adb6c0115b3f4e3c2033bfd702a321ec6eda72c" width="100" height="100"/></td>
-    <td align="center"><img src="https://mb.ntdtv.kr/assets/uploads/2019/01/Screen-Shot-2019-01-08-at-4.31.55-PM-e1546932545978.png" width="100" height="100"/></td>
-    <td align="center"><img src="https://mblogthumb-phinf.pstatic.net/20160127_177/krazymouse_1453865104404DjQIi_PNG/%C4%AB%C4%AB%BF%C0%C7%C1%B7%BB%C1%EE_%B6%F3%C0%CC%BE%F0.png?type=w2" width="100" height="100"/></td>
+    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/ea6d44ea-1134-4fad-bb67-ccfdddf12775)" width="100" height="100"/></td>
+    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/bed76f61-9ece-430f-b5f0-926073964ff0) width="100" height="100"/></td>
+    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/674ce153-3dd6-420f-b0f2-ab1afe348090)" width="100" height="100"/></td>
     <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="https://pbs.twimg.com/media/B-n6uPYUUAAZSUx.png" width="100" height="100"/></td>
+    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/2238ffa6-1b9c-4820-83a9-b4c6b72ca5aa)" width="100" height="100"/></td>
+    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/f0eec367-1841-4b96-9af8-563332025b63)" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>박찬홍</strong></td>
