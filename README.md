@@ -1,5 +1,5 @@
 # ReviewRepo
-팀명 및 사이트 명 :In Foot Out Foot
+팀 및 사이트 이름 :In Foot Out Foot
 ![ShoesMaker](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/a7bb3f44-cfb1-47b6-b305-071bac719cd4)
 
 <br>
@@ -35,10 +35,11 @@
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/redandcold" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
-    <td align="center"><a href="https://github.com/자신의username작성해주세요" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/alestore2" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/rsefaqtd" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/haegunHyeonseok" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/Dehann26" target='_blank'>github</a></td>
+    <td align="center"><a href="https://github.com/applestore2" target='_blank'>github</a></td>
   </tr>
 </table>
 
