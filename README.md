@@ -16,12 +16,12 @@
 ## 👨‍👩‍👦‍👦 팀원 역할
 <table>
   <tr>
-    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/ea6d44ea-1134-4fad-bb67-ccfdddf12775)" width="100" height="100"/></td>
-    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/bed76f61-9ece-430f-b5f0-926073964ff0) width="100" height="100"/></td>
-    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/674ce153-3dd6-420f-b0f2-ab1afe348090)" width="100" height="100"/></td>
-    <td align="center"><img src="https://i.pinimg.com/236x/ed/bb/53/edbb53d4f6dd710431c1140551404af9.jpg" width="100" height="100"/></td>
-    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/2238ffa6-1b9c-4820-83a9-b4c6b72ca5aa)" width="100" height="100"/></td>
-    <td align="center"><img src="![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/f0eec367-1841-4b96-9af8-563332025b63)" width="100" height="100"/></td>
+    <td align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPVFExbUsv0VWfpu7XbpfCq7BmSQzhqRnllg&usqp=CAU" width="100" height="100"/></td>
+    <td align="center"><img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723212878_bxr2reBk9w.jpg width="100" height="100"/></td>
+    <td align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQATD2ec1Z5Mw3A2lPqaZSo0jAF63i8Nrpw2w&usqp=CAU" width="100" height="100"/></td>
+    <td align="center"><img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723572507_BOtiBfIuyL.jpg" width="100" height="100"/></td>
+    <td align="center"><img src="https://static.ebs.co.kr/images/ebs/WAS-HOME/portal/upload/img/programinfo/person/per/1242723588618_dphGgSgOAp.jpg" width="100" height="100"/></td>
+    <td align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpda5nPWVxf2C26menb9U2UsIcJ_Kt6OwZNw&usqp=CAU" width="100" height="100"/></td>
   </tr>
   <tr>
     <td align="center"><strong>박찬홍</strong></td>
