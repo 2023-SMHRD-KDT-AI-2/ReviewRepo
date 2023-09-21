@@ -37,7 +37,7 @@
     <td align="center"><b>로그인후 회원정보 확인 및 수정, 구매한 리뷰목록, 세일품목 페이지, 로그인api</b></td>
     <td align="center"><b>회원가입 페이지, 상품 검색기능(같은 이름이 포함되어있는 상품 검색 및 찾기), 페이징(샵 검색이후 페이지 나누는 기능), 리뷰작성 페이지 기능(결제이후 상품 리뷰 작성 기능)</b></td>
     <td align="center"><b>DB 설계, 신발 상세정보, 상세 정보 밑 리뷰 끌어오기, 결제 페이지, 장바구니 페이지 , 로그인</b></td>
-    <td align="center"><b>프론트 총괄, 회원가입, 로그인, 팝업, 리뷰, 전체적인 웹들의 폼들을 구현</b></td>
+    <td align="center"><b>프론트 총괄, 회원가입, 로그인, 팝업, 배너, 리뷰, 전체적인 웹들의 폼들을 구현</b></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/redandcold" target='_blank'>github</a></td>
