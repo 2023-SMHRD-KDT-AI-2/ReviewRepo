@@ -56,7 +56,11 @@
 프로젝트 진행하는 동안 발생했던 이슈 중 가장 기억에 남았던 문제와 해결 프로세스 나열(2~5가지 정도)
   
 * 문제1<br>
- 문제점 설명 및 해결방안
+ 
+![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/88ea952d-0144-4261-88f4-03ceb93c7830)
+
  
 * 문제2<br>
- 문제점 설명 및 해결방안
+ 
+ ![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/cc9e3bfa-d474-4b86-8eec-29e5ecd6c4bc)
+
