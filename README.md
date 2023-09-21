@@ -4,12 +4,14 @@
 
 <br>
 
-### 사용자의 운동환경 및 경험을 고려한 신발 추천 서비스(리뷰 데이터를 수집하여 신발 특성 파악)
+### 사용자의 운동환경 및 경험을 고려한 신발 추천 서비스(리뷰 데이터를 수집하여 신발 특성 파악)<br>
+
 #### 상품 추천목록 예시
-<br>
-![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/ac68f372-b36f-4d57-8eb4-5fe2c55dc304)
+
+![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/ac68f372-b36f-4d57-8eb4-5fe2c55dc304) <br>
+
 #### 기술 스택
-![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/401eb413-203d-4af5-8ab8-ff12d6e65635)
+![image](https://github.com/2023-SMHRD-KDT-AI-2/ReviewRepo/assets/143058069/401eb413-203d-4af5-8ab8-ff12d6e65635) <br>
 
 
 
